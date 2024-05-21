@@ -17,7 +17,7 @@ Worth to read:
 * https://www.databricks.com/blog/2023/04/14/how-we-performed-etl-one-billion-records-under-1-delta-live-tables.html
 
 2. Authors:
-
+   pls work
    ***gr-8***
    Jakub Dzięgielewski, Filip Matysik, Jakub Śliwa
 
