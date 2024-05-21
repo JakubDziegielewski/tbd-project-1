@@ -39,7 +39,7 @@
 | <a name="input_image_version"></a> [image\_version](#input\_image\_version) | n/a | `string` | `"composer-2.4.6-airflow-2.6.3"` | no |
 | <a name="input_network"></a> [network](#input\_network) | VPC to use for notebooks | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project name | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-west1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-central2"` | no |
 | <a name="input_subnet_address"></a> [subnet\_address](#input\_subnet\_address) | VPC subnet used for deployment | `string` | n/a | yes |
 | <a name="input_subnet_name"></a> [subnet\_name](#input\_subnet\_name) | Composer subnet name | `string` | `"composer-subnet-01"` | no |
 

@@ -40,7 +40,7 @@ No modules.
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Arbitrary machine type for jupyter | `string` | n/a | yes |
 | <a name="input_network"></a> [network](#input\_network) | VPC to use for notebooks | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project name | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-west1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-central2"` | no |
 | <a name="input_subnet"></a> [subnet](#input\_subnet) | VPC subnet to use for notebooks | `string` | n/a | yes |
 
 ## Outputs
