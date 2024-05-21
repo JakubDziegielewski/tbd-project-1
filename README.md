@@ -181,7 +181,7 @@ terraform destroy -no-color -var-file env/project.tfvars
 | <a name="input_number_of_preemptible_machines"></a> [number\_of\_preemptible\_machines](#input\_number\_of\_preemptible\_machines) | Number of spot instances in dataproc module | `number` | `0` | no |
 | <a name="input_number_of_worker_machines"></a> [number\_of\_worker\_machines](#input\_number\_of\_worker\_machines) | Number of worker instances in dataproc module | `number` | `3` | no |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project name | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-west1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-central2"` | no |
 
 ## Outputs
 
