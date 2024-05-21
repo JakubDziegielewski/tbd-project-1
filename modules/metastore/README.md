@@ -32,7 +32,7 @@ No modules.
 | <a name="input_metastore_version"></a> [metastore\_version](#input\_metastore\_version) | Hive Metastore version | `string` | `"3.1.2"` | no |
 | <a name="input_network"></a> [network](#input\_network) | VPC to use for notebooks | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Project name | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-west1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | GCP region | `string` | `"europe-central2"` | no |
 
 ## Outputs
 
