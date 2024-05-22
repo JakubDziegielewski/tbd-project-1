@@ -16,7 +16,7 @@
   <!-- Site specific YARN configuration properties -->
   <property>
     <name>yarn.nodemanager.remote-app-log-dir</name>
-    <value>gs://dataproc-temp-europe-west1-171578482470-s4xxps9r/f196d014-ed51-409e-92bd-5d2b61cd8ab9/yarn-logs</value>
+    <value>gs://dataproc-temp-europe-central2-171578482470-s4xxps9r/f196d014-ed51-409e-92bd-5d2b61cd8ab9/yarn-logs</value>
     <description>
       The remote path, on the default FS, to store logs.
     </description>

@@ -61,7 +61,7 @@
   </property>
   <property>
     <name>fs.gs.system.bucket</name>
-    <value>dataproc-staging-europe-west1-171578482470-hybwli1n</value>
+    <value>dataproc-staging-europe-central2-171578482470-hybwli1n</value>
     <description>
       GCS bucket to use as a default bucket if fs.default.name is not a gs: uri.
     </description>
@@ -89,7 +89,7 @@
   </property>
   <property>
     <name>fs.gs.application.name.suffix</name>
-    <value>-dataproc zone/europe-west1-b</value>
+    <value>-dataproc zone/europe-central2-b</value>
     <description>
       Appended to the user-agent header for API requests to GCS to help identify
       the traffic as coming from Dataproc.

@@ -100,7 +100,7 @@
   </property>
   <property>
     <name>hive.user.install.directory</name>
-    <value>gs://dataproc-staging-europe-west1-60795364703-o7cpvo4x/google-cloud-dataproc-metainfo/ff017199-407a-4ba6-958e-d94a31479ca2/hive/user-install-dir</value>
+    <value>gs://dataproc-staging-europe-central2-60795364703-o7cpvo4x/google-cloud-dataproc-metainfo/ff017199-407a-4ba6-958e-d94a31479ca2/hive/user-install-dir</value>
   </property>
   <property>
     <name>hive.exec.input.listing.max.threads</name>

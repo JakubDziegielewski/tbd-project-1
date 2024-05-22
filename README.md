@@ -108,7 +108,7 @@ python3.8 -m ipykernel install --user --name pyspark
 11. Create a BigQuery dataset and an external table (change storage location if needed)
 
 ```sql
-CREATE SCHEMA IF NOT EXISTS demo OPTIONS(location = 'europe-west1');
+CREATE SCHEMA IF NOT EXISTS demo OPTIONS(location = 'europe-central2');
 
 CREATE OR REPLACE EXTERNAL TABLE demo.shakespeare
   OPTIONS (
