@@ -28,7 +28,7 @@ variable "machine_type_jupyter" {
 
 variable "number_of_worker_machines" {
   type        = number
-  default     = 3
+  default     = 2
   description = "Number of worker instances in dataproc module"
 }
 
