@@ -13,7 +13,7 @@ data "google_client_config" "provider" {}
 
 data "google_container_cluster" "composer-gke-cluster" {
   name     = reverse(split("/", module.composer.gke_cluster))[0]
-  location = var.region
+  location = "europe-west1"
 }
 
 provider "kubernetes" {
