@@ -176,7 +176,7 @@ terraform destroy -no-color -var-file env/project.tfvars
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_ai_notebook_instance_owner"></a> [ai\_notebook\_instance\_owner](#input\_ai\_notebook\_instance\_owner) | Vertex AI workbench owner | `string` | n/a | yes |
-| <a name="input_machine_type_dataproc"></a> [machine\_type\_dataproc](#input\_machine\_type\_dataproc) | Machine type to use for both worker and master nodes for dataproc | `string` | `"e2-medium"` | no |
+| <a name="input_machine_type_dataproc"></a> [machine\_type\_dataproc](#input\_machine\_type\_dataproc) | Machine type to use for both worker and master nodes for dataproc | `string` | `"e2-standard-4"` | no |
 | <a name="input_machine_type_jupyter"></a> [machine\_type\_jupyter](#input\_machine\_type\_jupyter) | Arbitrary machine type for jupyter | `string` | `"e2-standard-2"` | no |
 | <a name="input_number_of_preemptible_machines"></a> [number\_of\_preemptible\_machines](#input\_number\_of\_preemptible\_machines) | Number of spot instances in dataproc module | `number` | `0` | no |
 | <a name="input_number_of_worker_machines"></a> [number\_of\_worker\_machines](#input\_number\_of\_worker\_machines) | Number of worker instances in dataproc module | `number` | `2` | no |

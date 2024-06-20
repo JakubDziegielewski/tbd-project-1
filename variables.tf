@@ -16,7 +16,7 @@ variable "ai_notebook_instance_owner" {
 
 variable "machine_type_dataproc" {
   type        = string
-  default     = "e2-medium"
+  default     = "e2-standard-4"
   description = "Machine type to use for both worker and master nodes for dataproc"
 }
 
