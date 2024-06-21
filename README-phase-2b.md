@@ -27,7 +27,9 @@ in profiles.yml.
 
 4. In the notebook, collect console output from dbt run, then parse it and retrieve total execution time and execution times of processing each model. Save the results from each number of executors. 
 
+
   Zgodnie z instrukcją, przeprowadzono 3 eksperymenty dla wartości parametru `spark.executor.instances` równym odpowiednio 1, 2 oraz 4. Dokładny nieprzetworzony output zebrany z notebook'a w plikach tekstowych znajduje się w folderze [dbt_run_outputs](https://github.com/JakubDziegielewski/tbd-workshop-1/edit/sprawko/dbt_run_outputs).
+
 
 5. Analyze the performance and scalability of execution times of each model. Visualize and discucss the final results.
 
