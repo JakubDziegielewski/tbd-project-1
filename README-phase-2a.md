@@ -78,15 +78,15 @@ the running instance of your Vertex AI Workbench
 
 7. Explore files created by generator and describe them, including format, content, total size.
 
-   ***Files desccription***
+![img.png](doc/figures/files.png)
 
 8. Analyze tpcdi.py. What happened in the loading stage?
 
-   ***Your answer***
+   In the loading stage new SQL tables were created based on the content of some .txt and .csv files included on cloud. This led to creating some new features in that data. For each file data frame describing its content was created.
 
 9. Using SparkSQL answer: how many table were created in each layer?
 
-   ***SparkSQL command and output***
+![img.png](doc/figures/spark_tables.png)
 
 10. Add some 3 more [dbt tests](https://docs.getdbt.com/docs/build/tests) and explain what you are testing. ***Add new tests to your repository.***
 
@@ -101,4 +101,4 @@ the running instance of your Vertex AI Workbench
 
 12. Redeploy infrastructure and check if the DAG finished with no errors:
 
-***The screenshot of Apache Aiflow UI***
+Did not work. Most likely due to the fact that our composer has been run on the europe-west1, but this had to be done in order for the infrastructure to run.
