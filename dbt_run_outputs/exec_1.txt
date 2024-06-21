@@ -1,0 +1,3120 @@
+18:16:20  Running with dbt=1.7.13
+18:16:20  Installing dbt-labs/dbt_utils
+18:16:21  Installed from version 1.1.1
+18:16:21  Updated version available: 1.2.0
+18:16:21  
+18:16:21  Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+18:16:25  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1843be550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb18295c220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb18295c9a0>]}
+18:16:25  Running with dbt=1.7.13
+18:16:25  running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/jupyter/git/tbd-tpc-di', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/jupyter/git/tbd-tpc-di/logs', 'version_check': 'True', 'debug': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run -d', 'send_anonymous_usage_stats': 'True'}
+18:16:25  Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb184afd940>]}
+18:16:25  Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ca0e730>]}
+18:16:25  Registered adapter: spark=1.7.1
+18:16:25  checksum: 6c24e2ee36a42cedd7e5de2827d214776eb7a8e8f425f6d8acb06c31add0afef, vars: {}, profile: , target: , version: 1.7.13
+18:16:26  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+18:16:26  Partial parsing enabled, no changes found, skipping parsing
+18:16:26  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c68bc40>]}
+18:16:26  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c8cdf10>]}
+18:16:26  Found 46 models, 8 tests, 17 sources, 0 exposures, 0 metrics, 553 macros, 0 groups, 0 semantic models
+18:16:26  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c8cde50>]}
+18:16:26  
+18:16:26  Acquiring new spark connection 'master'
+18:16:26  Acquiring new spark connection 'list_schemas'
+18:16:26  Using spark connection "list_schemas"
+18:16:26  On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "connection_name": "list_schemas"} */
+
+    show databases
+  
+18:16:26  Opening a new connection, currently in state init
+:: loading settings :: url = jar:file:/usr/local/lib/python3.8/dist-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /root/.ivy2/cache
+The jars for the packages stored in: /root/.ivy2/jars
+com.databricks#spark-xml_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-7858d8dc-6f6d-4d20-a3ac-f1f35136a644;1.0
+	confs: [default]
+	found com.databricks#spark-xml_2.12;0.17.0 in central
+	found commons-io#commons-io;2.11.0 in central
+	found org.glassfish.jaxb#txw2;3.0.2 in central
+	found org.apache.ws.xmlschema#xmlschema-core;2.3.0 in central
+	found org.scala-lang.modules#scala-collection-compat_2.12;2.9.0 in central
+:: resolution report :: resolve 438ms :: artifacts dl 24ms
+	:: modules in use:
+	com.databricks#spark-xml_2.12;0.17.0 from central in [default]
+	commons-io#commons-io;2.11.0 from central in [default]
+	org.apache.ws.xmlschema#xmlschema-core;2.3.0 from central in [default]
+	org.glassfish.jaxb#txw2;3.0.2 from central in [default]
+	org.scala-lang.modules#scala-collection-compat_2.12;2.9.0 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   5   |   0   |   0   |   0   ||   5   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-7858d8dc-6f6d-4d20-a3ac-f1f35136a644
+	confs: [default]
+	0 artifacts copied, 5 already retrieved (0kB/18ms)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.shaded.org.xbill.DNS.ResolverConfig (file:/usr/local/lib/python3.8/dist-packages/pyspark/jars/hadoop-client-runtime-3.3.2.jar) to method sun.net.dns.ResolverConfiguration.open()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.shaded.org.xbill.DNS.ResolverConfig
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+24/06/20 18:16:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/06/20 18:16:33 WARN DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+24/06/20 18:16:33 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+24/06/20 18:16:40 WARN Client: Same path resource file:///root/.ivy2/jars/com.databricks_spark-xml_2.12-0.17.0.jar added multiple times to distributed cache.
+24/06/20 18:16:40 WARN Client: Same path resource file:///root/.ivy2/jars/commons-io_commons-io-2.11.0.jar added multiple times to distributed cache.
+24/06/20 18:16:40 WARN Client: Same path resource file:///root/.ivy2/jars/org.glassfish.jaxb_txw2-3.0.2.jar added multiple times to distributed cache.
+24/06/20 18:16:40 WARN Client: Same path resource file:///root/.ivy2/jars/org.apache.ws.xmlschema_xmlschema-core-2.3.0.jar added multiple times to distributed cache.
+24/06/20 18:16:40 WARN Client: Same path resource file:///root/.ivy2/jars/org.scala-lang.modules_scala-collection-compat_2.12-2.9.0.jar added multiple times to distributed cache.
+24/06/20 18:17:00 WARN HiveClientImpl: Detected HiveConf hive.execution.engine is 'tez' and will be reset to 'mr' to disable useless hive logic
+18:17:01  SQL status: OK in 35.0 seconds
+18:17:02  On list_schemas: Close
+18:17:02  Using spark connection "list_schemas"
+18:17:02  On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "connection_name": "list_schemas"} */
+
+    show databases
+  
+18:17:02  Opening a new connection, currently in state closed
+18:17:02  SQL status: OK in 0.0 seconds
+18:17:02  On list_schemas: Close
+18:17:02  Using spark connection "list_schemas"
+18:17:02  On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "connection_name": "list_schemas"} */
+
+    show databases
+  
+18:17:02  Opening a new connection, currently in state closed
+18:17:02  SQL status: OK in 0.0 seconds
+18:17:02  On list_schemas: Close
+18:17:02  Acquiring new spark connection 'list_None_demo_gold'
+18:17:02  Spark adapter: NotImplemented: add_begin_query
+18:17:02  Using spark connection "list_None_demo_gold"
+18:17:02  On list_None_demo_gold: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "connection_name": "list_None_demo_gold"} */
+show table extended in demo_gold like '*'
+  
+18:17:02  Opening a new connection, currently in state init
+18:17:04  SQL status: OK in 1.0 seconds
+18:17:04  On list_None_demo_gold: ROLLBACK
+18:17:04  Spark adapter: NotImplemented: rollback
+18:17:04  On list_None_demo_gold: Close
+18:17:04  Re-using an available connection from the pool (formerly list_None_demo_gold, now list_None_demo_silver)
+18:17:04  Spark adapter: NotImplemented: add_begin_query
+18:17:04  Using spark connection "list_None_demo_silver"
+18:17:04  On list_None_demo_silver: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "connection_name": "list_None_demo_silver"} */
+show table extended in demo_silver like '*'
+  
+18:17:04  Opening a new connection, currently in state closed
+18:17:05  SQL status: OK in 1.0 seconds
+18:17:05  On list_None_demo_silver: ROLLBACK
+18:17:05  Spark adapter: NotImplemented: rollback
+18:17:05  On list_None_demo_silver: Close
+18:17:05  Re-using an available connection from the pool (formerly list_None_demo_silver, now list_None_demo_bronze)
+18:17:05  Spark adapter: NotImplemented: add_begin_query
+18:17:05  Using spark connection "list_None_demo_bronze"
+18:17:05  On list_None_demo_bronze: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "connection_name": "list_None_demo_bronze"} */
+show table extended in demo_bronze like '*'
+  
+18:17:05  Opening a new connection, currently in state closed
+18:17:06  SQL status: OK in 1.0 seconds
+18:17:06  On list_None_demo_bronze: ROLLBACK
+18:17:06  Spark adapter: NotImplemented: rollback
+18:17:06  On list_None_demo_bronze: Close
+18:17:06  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c9c4c10>]}
+18:17:06  Spark adapter: NotImplemented: add_begin_query
+18:17:06  Spark adapter: NotImplemented: commit
+18:17:06  Concurrency: 1 threads (target='dev')
+18:17:06  
+18:17:06  Began running node model.tbd_tpcdi.brokerage_cash_transaction
+18:17:06  1 of 45 START sql table model demo_bronze.brokerage_cash_transaction ........... [RUN]
+18:17:06  Re-using an available connection from the pool (formerly list_None_demo_bronze, now model.tbd_tpcdi.brokerage_cash_transaction)
+18:17:06  Began compiling node model.tbd_tpcdi.brokerage_cash_transaction
+18:17:06  Writing injected SQL for node "model.tbd_tpcdi.brokerage_cash_transaction"
+18:17:06  Timing info for model.tbd_tpcdi.brokerage_cash_transaction (compile): 18:17:06.122435 => 18:17:06.144233
+18:17:06  Began executing node model.tbd_tpcdi.brokerage_cash_transaction
+18:17:06  Using spark connection "model.tbd_tpcdi.brokerage_cash_transaction"
+18:17:06  On model.tbd_tpcdi.brokerage_cash_transaction: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction"} */
+drop table if exists demo_bronze.brokerage_cash_transaction
+18:17:06  Opening a new connection, currently in state closed
+18:17:06  SQL status: OK in 0.0 seconds
+18:17:06  Writing runtime sql for node "model.tbd_tpcdi.brokerage_cash_transaction"
+18:17:06  Spark adapter: NotImplemented: add_begin_query
+18:17:06  Using spark connection "model.tbd_tpcdi.brokerage_cash_transaction"
+18:17:06  On model.tbd_tpcdi.brokerage_cash_transaction: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction"} */
+
+  
+    
+        create table demo_bronze.brokerage_cash_transaction
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.cash_transaction
+  
+24/06/20 18:17:07 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+24/06/20 18:17:07 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+18:18:01  SQL status: OK in 55.0 seconds
+18:18:01  Timing info for model.tbd_tpcdi.brokerage_cash_transaction (execute): 18:17:06.146763 => 18:18:01.757841
+18:18:01  On model.tbd_tpcdi.brokerage_cash_transaction: ROLLBACK
+18:18:01  Spark adapter: NotImplemented: rollback
+18:18:01  On model.tbd_tpcdi.brokerage_cash_transaction: Close
+18:18:01  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179bdb640>]}
+18:18:01  1 of 45 OK created sql table model demo_bronze.brokerage_cash_transaction ...... [OK in 55.65s]
+18:18:01  Finished running node model.tbd_tpcdi.brokerage_cash_transaction
+18:18:01  Began running node model.tbd_tpcdi.brokerage_cash_transaction-checkpoint
+18:18:01  2 of 45 START sql table model demo_bronze.brokerage_cash_transaction-checkpoint  [RUN]
+18:18:01  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_cash_transaction, now model.tbd_tpcdi.brokerage_cash_transaction-checkpoint)
+18:18:01  Began compiling node model.tbd_tpcdi.brokerage_cash_transaction-checkpoint
+18:18:01  Writing injected SQL for node "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"
+18:18:01  Timing info for model.tbd_tpcdi.brokerage_cash_transaction-checkpoint (compile): 18:18:01.831084 => 18:18:01.863354
+18:18:01  Began executing node model.tbd_tpcdi.brokerage_cash_transaction-checkpoint
+18:18:01  Using spark connection "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"
+18:18:01  On model.tbd_tpcdi.brokerage_cash_transaction-checkpoint: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+18:18:01  Opening a new connection, currently in state closed
+18:18:02  Spark adapter: Error while running:
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+18:18:02  Spark adapter: 
+Possibly unquoted identifier brokerage_cash_transaction-checkpoint detected. Please consider quoting it with back-quotes as `brokerage_cash_transaction-checkpoint`(line 2, pos 59)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+-----------------------------------------------------------^^^
+
+18:18:02  Spark adapter: Error while running:
+macro drop_relation
+18:18:02  Spark adapter: 
+Possibly unquoted identifier brokerage_cash_transaction-checkpoint detected. Please consider quoting it with back-quotes as `brokerage_cash_transaction-checkpoint`(line 2, pos 59)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+-----------------------------------------------------------^^^
+
+18:18:02  Timing info for model.tbd_tpcdi.brokerage_cash_transaction-checkpoint (execute): 18:18:01.874351 => 18:18:02.076952
+18:18:02  On model.tbd_tpcdi.brokerage_cash_transaction-checkpoint: Close
+18:18:02  Unhandled error while executing 
+Possibly unquoted identifier brokerage_cash_transaction-checkpoint detected. Please consider quoting it with back-quotes as `brokerage_cash_transaction-checkpoint`(line 2, pos 59)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+-----------------------------------------------------------^^^
+18:18:02  Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 380, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 326, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 427, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/run.py", line 292, in execute
+    result = MacroGenerator(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 99, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/impl.py", line 142, in drop_relation
+    self.execute_macro(DROP_RELATION_MACRO_NAME, kwargs={"relation": relation})
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 1112, in execute_macro
+    result = macro_function(**kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 20, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 29, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 52, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 310, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 138, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 80, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/spark/session.py", line 227, in execute
+    self._cursor.execute(sql)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/spark/session.py", line 124, in execute
+    self._df = spark_session.sql(sql)
+  File "/usr/local/lib/python3.8/dist-packages/pyspark/sql/session.py", line 1034, in sql
+    return DataFrame(self._jsparkSession.sql(sqlQuery), self)
+  File "/usr/local/lib/python3.8/dist-packages/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/usr/local/lib/python3.8/dist-packages/pyspark/sql/utils.py", line 196, in deco
+    raise converted from None
+pyspark.sql.utils.ParseException: 
+Possibly unquoted identifier brokerage_cash_transaction-checkpoint detected. Please consider quoting it with back-quotes as `brokerage_cash_transaction-checkpoint`(line 2, pos 59)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+-----------------------------------------------------------^^^
+
+
+18:18:02  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17b4965e0>]}
+18:18:02  2 of 45 ERROR creating sql table model demo_bronze.brokerage_cash_transaction-checkpoint  [ERROR in 0.35s]
+18:18:02  Finished running node model.tbd_tpcdi.brokerage_cash_transaction-checkpoint
+18:18:02  Began running node model.tbd_tpcdi.brokerage_daily_market
+18:18:02  3 of 45 START sql table model demo_bronze.brokerage_daily_market ............... [RUN]
+18:18:02  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_cash_transaction-checkpoint, now model.tbd_tpcdi.brokerage_daily_market)
+18:18:02  Began compiling node model.tbd_tpcdi.brokerage_daily_market
+18:18:02  Writing injected SQL for node "model.tbd_tpcdi.brokerage_daily_market"
+18:18:02  Timing info for model.tbd_tpcdi.brokerage_daily_market (compile): 18:18:02.187409 => 18:18:02.231323
+18:18:02  Began executing node model.tbd_tpcdi.brokerage_daily_market
+18:18:02  Using spark connection "model.tbd_tpcdi.brokerage_daily_market"
+18:18:02  On model.tbd_tpcdi.brokerage_daily_market: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_daily_market"} */
+drop table if exists demo_bronze.brokerage_daily_market
+18:18:02  Opening a new connection, currently in state closed
+18:18:02  SQL status: OK in 0.0 seconds
+18:18:02  Writing runtime sql for node "model.tbd_tpcdi.brokerage_daily_market"
+18:18:02  Spark adapter: NotImplemented: add_begin_query
+18:18:02  Using spark connection "model.tbd_tpcdi.brokerage_daily_market"
+18:18:02  On model.tbd_tpcdi.brokerage_daily_market: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_daily_market"} */
+
+  
+    
+        create table demo_bronze.brokerage_daily_market
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    *
+from digen.daily_market
+  
+24/06/20 18:18:02 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:23:40  SQL status: OK in 337.0 seconds
+18:23:40  Timing info for model.tbd_tpcdi.brokerage_daily_market (execute): 18:18:02.250982 => 18:23:40.050623
+18:23:40  On model.tbd_tpcdi.brokerage_daily_market: ROLLBACK
+18:23:40  Spark adapter: NotImplemented: rollback
+18:23:40  On model.tbd_tpcdi.brokerage_daily_market: Close
+18:23:40  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac20040>]}
+18:23:40  3 of 45 OK created sql table model demo_bronze.brokerage_daily_market .......... [OK in 337.88s]
+18:23:40  Finished running node model.tbd_tpcdi.brokerage_daily_market
+18:23:40  Began running node model.tbd_tpcdi.brokerage_holding_history
+18:23:40  4 of 45 START sql table model demo_bronze.brokerage_holding_history ............ [RUN]
+18:23:40  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_daily_market, now model.tbd_tpcdi.brokerage_holding_history)
+18:23:40  Began compiling node model.tbd_tpcdi.brokerage_holding_history
+18:23:40  Writing injected SQL for node "model.tbd_tpcdi.brokerage_holding_history"
+18:23:40  Timing info for model.tbd_tpcdi.brokerage_holding_history (compile): 18:23:40.068368 => 18:23:40.078106
+18:23:40  Began executing node model.tbd_tpcdi.brokerage_holding_history
+18:23:40  Using spark connection "model.tbd_tpcdi.brokerage_holding_history"
+18:23:40  On model.tbd_tpcdi.brokerage_holding_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_holding_history"} */
+drop table if exists demo_bronze.brokerage_holding_history
+18:23:40  Opening a new connection, currently in state closed
+18:23:40  SQL status: OK in 0.0 seconds
+18:23:40  Writing runtime sql for node "model.tbd_tpcdi.brokerage_holding_history"
+18:23:40  Spark adapter: NotImplemented: add_begin_query
+18:23:40  Using spark connection "model.tbd_tpcdi.brokerage_holding_history"
+18:23:40  On model.tbd_tpcdi.brokerage_holding_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_holding_history"} */
+
+  
+    
+        create table demo_bronze.brokerage_holding_history
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.holding_history
+  
+24/06/20 18:23:40 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:24:31  SQL status: OK in 51.0 seconds
+18:24:31  Timing info for model.tbd_tpcdi.brokerage_holding_history (execute): 18:23:40.080707 => 18:24:31.458371
+18:24:31  On model.tbd_tpcdi.brokerage_holding_history: ROLLBACK
+18:24:31  Spark adapter: NotImplemented: rollback
+18:24:31  On model.tbd_tpcdi.brokerage_holding_history: Close
+18:24:31  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b831c0>]}
+18:24:31  4 of 45 OK created sql table model demo_bronze.brokerage_holding_history ....... [OK in 51.40s]
+18:24:31  Finished running node model.tbd_tpcdi.brokerage_holding_history
+18:24:31  Began running node model.tbd_tpcdi.brokerage_trade
+18:24:31  5 of 45 START sql table model demo_bronze.brokerage_trade ...................... [RUN]
+18:24:31  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_holding_history, now model.tbd_tpcdi.brokerage_trade)
+18:24:31  Began compiling node model.tbd_tpcdi.brokerage_trade
+18:24:31  Writing injected SQL for node "model.tbd_tpcdi.brokerage_trade"
+18:24:31  Timing info for model.tbd_tpcdi.brokerage_trade (compile): 18:24:31.475916 => 18:24:31.485504
+18:24:31  Began executing node model.tbd_tpcdi.brokerage_trade
+18:24:31  Using spark connection "model.tbd_tpcdi.brokerage_trade"
+18:24:31  On model.tbd_tpcdi.brokerage_trade: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_trade"} */
+drop table if exists demo_bronze.brokerage_trade
+18:24:31  Opening a new connection, currently in state closed
+18:24:31  SQL status: OK in 0.0 seconds
+18:24:31  Writing runtime sql for node "model.tbd_tpcdi.brokerage_trade"
+18:24:31  Spark adapter: NotImplemented: add_begin_query
+18:24:31  Using spark connection "model.tbd_tpcdi.brokerage_trade"
+18:24:31  On model.tbd_tpcdi.brokerage_trade: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_trade"} */
+
+  
+    
+        create table demo_bronze.brokerage_trade
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.trade
+  
+24/06/20 18:24:31 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:27:02  SQL status: OK in 151.0 seconds
+18:27:02  Timing info for model.tbd_tpcdi.brokerage_trade (execute): 18:24:31.488033 => 18:27:02.533407
+18:27:02  On model.tbd_tpcdi.brokerage_trade: ROLLBACK
+18:27:02  Spark adapter: NotImplemented: rollback
+18:27:02  On model.tbd_tpcdi.brokerage_trade: Close
+18:27:02  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b831c0>]}
+18:27:02  5 of 45 OK created sql table model demo_bronze.brokerage_trade ................. [OK in 151.07s]
+18:27:02  Finished running node model.tbd_tpcdi.brokerage_trade
+18:27:02  Began running node model.tbd_tpcdi.brokerage_trade_history
+18:27:02  6 of 45 START sql table model demo_bronze.brokerage_trade_history .............. [RUN]
+18:27:02  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_trade, now model.tbd_tpcdi.brokerage_trade_history)
+18:27:02  Began compiling node model.tbd_tpcdi.brokerage_trade_history
+18:27:02  Writing injected SQL for node "model.tbd_tpcdi.brokerage_trade_history"
+18:27:02  Timing info for model.tbd_tpcdi.brokerage_trade_history (compile): 18:27:02.599086 => 18:27:02.612657
+18:27:02  Began executing node model.tbd_tpcdi.brokerage_trade_history
+18:27:02  Using spark connection "model.tbd_tpcdi.brokerage_trade_history"
+18:27:02  On model.tbd_tpcdi.brokerage_trade_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_trade_history"} */
+drop table if exists demo_bronze.brokerage_trade_history
+18:27:02  Opening a new connection, currently in state closed
+18:27:02  SQL status: OK in 0.0 seconds
+18:27:02  Writing runtime sql for node "model.tbd_tpcdi.brokerage_trade_history"
+18:27:02  Spark adapter: NotImplemented: add_begin_query
+18:27:02  Using spark connection "model.tbd_tpcdi.brokerage_trade_history"
+18:27:02  On model.tbd_tpcdi.brokerage_trade_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_trade_history"} */
+
+  
+    
+        create table demo_bronze.brokerage_trade_history
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.trade_history
+  
+24/06/20 18:27:03 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:29:04  SQL status: OK in 122.0 seconds
+18:29:04  Timing info for model.tbd_tpcdi.brokerage_trade_history (execute): 18:27:02.619597 => 18:29:04.591571
+18:29:04  On model.tbd_tpcdi.brokerage_trade_history: ROLLBACK
+18:29:04  Spark adapter: NotImplemented: rollback
+18:29:04  On model.tbd_tpcdi.brokerage_trade_history: Close
+18:29:04  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b831c0>]}
+18:29:04  6 of 45 OK created sql table model demo_bronze.brokerage_trade_history ......... [OK in 122.01s]
+18:29:04  Finished running node model.tbd_tpcdi.brokerage_trade_history
+18:29:04  Began running node model.tbd_tpcdi.brokerage_watch_history
+18:29:04  7 of 45 START sql table model demo_bronze.brokerage_watch_history .............. [RUN]
+18:29:04  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_trade_history, now model.tbd_tpcdi.brokerage_watch_history)
+18:29:04  Began compiling node model.tbd_tpcdi.brokerage_watch_history
+18:29:04  Writing injected SQL for node "model.tbd_tpcdi.brokerage_watch_history"
+18:29:04  Timing info for model.tbd_tpcdi.brokerage_watch_history (compile): 18:29:04.607155 => 18:29:04.617098
+18:29:04  Began executing node model.tbd_tpcdi.brokerage_watch_history
+18:29:04  Using spark connection "model.tbd_tpcdi.brokerage_watch_history"
+18:29:04  On model.tbd_tpcdi.brokerage_watch_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_watch_history"} */
+drop table if exists demo_bronze.brokerage_watch_history
+18:29:04  Opening a new connection, currently in state closed
+18:29:04  SQL status: OK in 0.0 seconds
+18:29:04  Writing runtime sql for node "model.tbd_tpcdi.brokerage_watch_history"
+18:29:04  Spark adapter: NotImplemented: add_begin_query
+18:29:04  Using spark connection "model.tbd_tpcdi.brokerage_watch_history"
+18:29:04  On model.tbd_tpcdi.brokerage_watch_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_watch_history"} */
+
+  
+    
+        create table demo_bronze.brokerage_watch_history
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    *
+from digen.watch_history
+  
+24/06/20 18:29:04 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:31:46  SQL status: OK in 162.0 seconds
+18:31:46  Timing info for model.tbd_tpcdi.brokerage_watch_history (execute): 18:29:04.619666 => 18:31:46.959102
+18:31:46  On model.tbd_tpcdi.brokerage_watch_history: ROLLBACK
+18:31:46  Spark adapter: NotImplemented: rollback
+18:31:46  On model.tbd_tpcdi.brokerage_watch_history: Close
+18:31:46  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b831c0>]}
+18:31:46  7 of 45 OK created sql table model demo_bronze.brokerage_watch_history ......... [OK in 162.37s]
+18:31:46  Finished running node model.tbd_tpcdi.brokerage_watch_history
+18:31:46  Began running node model.tbd_tpcdi.crm_customer_mgmt
+18:31:46  8 of 45 START sql table model demo_bronze.crm_customer_mgmt .................... [RUN]
+18:31:46  Re-using an available connection from the pool (formerly model.tbd_tpcdi.brokerage_watch_history, now model.tbd_tpcdi.crm_customer_mgmt)
+18:31:46  Began compiling node model.tbd_tpcdi.crm_customer_mgmt
+18:31:46  Writing injected SQL for node "model.tbd_tpcdi.crm_customer_mgmt"
+18:31:47  Timing info for model.tbd_tpcdi.crm_customer_mgmt (compile): 18:31:46.986929 => 18:31:47.002416
+18:31:47  Began executing node model.tbd_tpcdi.crm_customer_mgmt
+18:31:47  Using spark connection "model.tbd_tpcdi.crm_customer_mgmt"
+18:31:47  On model.tbd_tpcdi.crm_customer_mgmt: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.crm_customer_mgmt"} */
+drop table if exists demo_bronze.crm_customer_mgmt
+18:31:47  Opening a new connection, currently in state closed
+18:31:47  SQL status: OK in 0.0 seconds
+18:31:47  Writing runtime sql for node "model.tbd_tpcdi.crm_customer_mgmt"
+18:31:47  Spark adapter: NotImplemented: add_begin_query
+18:31:47  Using spark connection "model.tbd_tpcdi.crm_customer_mgmt"
+18:31:47  On model.tbd_tpcdi.crm_customer_mgmt: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.crm_customer_mgmt"} */
+
+  
+    
+        create table demo_bronze.crm_customer_mgmt
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.customer_mgmt
+  
+24/06/20 18:31:47 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+24/06/20 18:31:47 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+18:32:03  SQL status: OK in 16.0 seconds
+18:32:03  Timing info for model.tbd_tpcdi.crm_customer_mgmt (execute): 18:31:47.005835 => 18:32:03.928482
+18:32:03  On model.tbd_tpcdi.crm_customer_mgmt: ROLLBACK
+18:32:03  Spark adapter: NotImplemented: rollback
+18:32:03  On model.tbd_tpcdi.crm_customer_mgmt: Close
+18:32:03  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac10c40>]}
+18:32:03  8 of 45 OK created sql table model demo_bronze.crm_customer_mgmt ............... [OK in 16.96s]
+18:32:03  Finished running node model.tbd_tpcdi.crm_customer_mgmt
+18:32:03  Began running node model.tbd_tpcdi.finwire_company
+18:32:03  9 of 45 START sql table model demo_bronze.finwire_company ...................... [RUN]
+18:32:03  Re-using an available connection from the pool (formerly model.tbd_tpcdi.crm_customer_mgmt, now model.tbd_tpcdi.finwire_company)
+18:32:03  Began compiling node model.tbd_tpcdi.finwire_company
+18:32:03  Writing injected SQL for node "model.tbd_tpcdi.finwire_company"
+18:32:03  Timing info for model.tbd_tpcdi.finwire_company (compile): 18:32:03.960157 => 18:32:03.967731
+18:32:03  Began executing node model.tbd_tpcdi.finwire_company
+18:32:03  Using spark connection "model.tbd_tpcdi.finwire_company"
+18:32:03  On model.tbd_tpcdi.finwire_company: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.finwire_company"} */
+drop table if exists demo_bronze.finwire_company
+18:32:03  Opening a new connection, currently in state closed
+18:32:04  SQL status: OK in 0.0 seconds
+18:32:04  Writing runtime sql for node "model.tbd_tpcdi.finwire_company"
+18:32:04  Spark adapter: NotImplemented: add_begin_query
+18:32:04  Using spark connection "model.tbd_tpcdi.finwire_company"
+18:32:04  On model.tbd_tpcdi.finwire_company: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.finwire_company"} */
+
+  
+    
+        create table demo_bronze.finwire_company
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    *
+from digen.cmp
+  
+24/06/20 18:32:04 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:32:09  SQL status: OK in 6.0 seconds
+18:32:10  Timing info for model.tbd_tpcdi.finwire_company (execute): 18:32:03.973397 => 18:32:10.002390
+18:32:10  On model.tbd_tpcdi.finwire_company: ROLLBACK
+18:32:10  Spark adapter: NotImplemented: rollback
+18:32:10  On model.tbd_tpcdi.finwire_company: Close
+18:32:10  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b781f0>]}
+18:32:10  9 of 45 OK created sql table model demo_bronze.finwire_company ................. [OK in 6.06s]
+18:32:10  Finished running node model.tbd_tpcdi.finwire_company
+18:32:10  Began running node model.tbd_tpcdi.finwire_financial
+18:32:10  10 of 45 START sql table model demo_bronze.finwire_financial ................... [RUN]
+18:32:10  Re-using an available connection from the pool (formerly model.tbd_tpcdi.finwire_company, now model.tbd_tpcdi.finwire_financial)
+18:32:10  Began compiling node model.tbd_tpcdi.finwire_financial
+18:32:10  Writing injected SQL for node "model.tbd_tpcdi.finwire_financial"
+18:32:10  Timing info for model.tbd_tpcdi.finwire_financial (compile): 18:32:10.021729 => 18:32:10.042087
+18:32:10  Began executing node model.tbd_tpcdi.finwire_financial
+18:32:10  Using spark connection "model.tbd_tpcdi.finwire_financial"
+18:32:10  On model.tbd_tpcdi.finwire_financial: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.finwire_financial"} */
+drop table if exists demo_bronze.finwire_financial
+18:32:10  Opening a new connection, currently in state closed
+18:32:10  SQL status: OK in 0.0 seconds
+18:32:10  Writing runtime sql for node "model.tbd_tpcdi.finwire_financial"
+18:32:10  Spark adapter: NotImplemented: add_begin_query
+18:32:10  Using spark connection "model.tbd_tpcdi.finwire_financial"
+18:32:10  On model.tbd_tpcdi.finwire_financial: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.finwire_financial"} */
+
+  
+    
+        create table demo_bronze.finwire_financial
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select 
+        *,
+        try_to_number(co_name_or_cik, '9999999999') as try_cik
+    from digen.fin
+)
+select 
+    pts,
+    to_number(year, '9999') as year,
+    to_number(quarter, '99') as quarter,
+    to_date(quarter_start_date,'yyyymmdd') as quarter_start_date,
+    to_date(posting_date,'yyyymmdd') as posting_date,
+    cast(revenue as float) as revenue,
+    cast(earnings as float) as earnings,
+    cast(eps as float) as eps,
+    cast(diluted_eps as float) as diluted_eps,
+    cast(margin as float) as margin,
+    cast(inventory as float) as inventory,
+    cast(assets as float) as assets,
+    cast(liabilities as float) as liabilities,
+    to_number(sh_out, '9999999999') as sh_out,
+    to_number(diluted_sh_out, '9999999999') as diluted_sh_out,
+    try_cik cik,
+    case when try_cik is null then co_name_or_cik else null end company_name
+from s1
+  
+24/06/20 18:32:10 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:03  SQL status: OK in 113.0 seconds
+18:34:03  Timing info for model.tbd_tpcdi.finwire_financial (execute): 18:32:10.049783 => 18:34:03.362867
+18:34:03  On model.tbd_tpcdi.finwire_financial: ROLLBACK
+18:34:03  Spark adapter: NotImplemented: rollback
+18:34:03  On model.tbd_tpcdi.finwire_financial: Close
+18:34:03  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179bc93a0>]}
+18:34:03  10 of 45 OK created sql table model demo_bronze.finwire_financial .............. [OK in 113.35s]
+18:34:03  Finished running node model.tbd_tpcdi.finwire_financial
+18:34:03  Began running node model.tbd_tpcdi.finwire_security
+18:34:03  11 of 45 START sql table model demo_bronze.finwire_security .................... [RUN]
+18:34:03  Re-using an available connection from the pool (formerly model.tbd_tpcdi.finwire_financial, now model.tbd_tpcdi.finwire_security)
+18:34:03  Began compiling node model.tbd_tpcdi.finwire_security
+18:34:03  Writing injected SQL for node "model.tbd_tpcdi.finwire_security"
+18:34:03  Timing info for model.tbd_tpcdi.finwire_security (compile): 18:34:03.411404 => 18:34:03.433060
+18:34:03  Began executing node model.tbd_tpcdi.finwire_security
+18:34:03  Using spark connection "model.tbd_tpcdi.finwire_security"
+18:34:03  On model.tbd_tpcdi.finwire_security: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.finwire_security"} */
+drop table if exists demo_bronze.finwire_security
+18:34:03  Opening a new connection, currently in state closed
+18:34:03  SQL status: OK in 0.0 seconds
+18:34:03  Writing runtime sql for node "model.tbd_tpcdi.finwire_security"
+18:34:03  Spark adapter: NotImplemented: add_begin_query
+18:34:03  Using spark connection "model.tbd_tpcdi.finwire_security"
+18:34:03  On model.tbd_tpcdi.finwire_security: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.finwire_security"} */
+
+  
+    
+        create table demo_bronze.finwire_security
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select *,
+    try_to_number(co_name_or_cik, '9999999999') as try_cik
+    from digen.sec
+)
+select  
+    pts,
+    symbol,
+    issue_type,
+    status,
+    name,
+    ex_id,
+    to_number(sh_out, '9999999999') as sh_out,
+    to_date(first_trade_date,'yyyymmdd') as first_trade_date,
+    to_date(first_exchange_date,'yyyymmdd') as first_exchange_date,
+    cast(dividend as float) as dividend,
+    try_cik cik,
+    case when try_cik is null then co_name_or_cik else null end company_name
+from s1
+  
+24/06/20 18:34:03 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:06  SQL status: OK in 3.0 seconds
+18:34:06  Timing info for model.tbd_tpcdi.finwire_security (execute): 18:34:03.444257 => 18:34:06.615567
+18:34:06  On model.tbd_tpcdi.finwire_security: ROLLBACK
+18:34:06  Spark adapter: NotImplemented: rollback
+18:34:06  On model.tbd_tpcdi.finwire_security: Close
+18:34:06  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b781f0>]}
+18:34:06  11 of 45 OK created sql table model demo_bronze.finwire_security ............... [OK in 3.23s]
+18:34:06  Finished running node model.tbd_tpcdi.finwire_security
+18:34:06  Began running node model.tbd_tpcdi.hr_employee
+18:34:06  12 of 45 START sql table model demo_bronze.hr_employee ......................... [RUN]
+18:34:06  Re-using an available connection from the pool (formerly model.tbd_tpcdi.finwire_security, now model.tbd_tpcdi.hr_employee)
+18:34:06  Began compiling node model.tbd_tpcdi.hr_employee
+18:34:06  Writing injected SQL for node "model.tbd_tpcdi.hr_employee"
+18:34:06  Timing info for model.tbd_tpcdi.hr_employee (compile): 18:34:06.640620 => 18:34:06.654477
+18:34:06  Began executing node model.tbd_tpcdi.hr_employee
+18:34:06  Using spark connection "model.tbd_tpcdi.hr_employee"
+18:34:06  On model.tbd_tpcdi.hr_employee: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.hr_employee"} */
+drop table if exists demo_bronze.hr_employee
+18:34:06  Opening a new connection, currently in state closed
+18:34:06  SQL status: OK in 0.0 seconds
+18:34:06  Writing runtime sql for node "model.tbd_tpcdi.hr_employee"
+18:34:06  Spark adapter: NotImplemented: add_begin_query
+18:34:06  Using spark connection "model.tbd_tpcdi.hr_employee"
+18:34:06  On model.tbd_tpcdi.hr_employee: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.hr_employee"} */
+
+  
+    
+        create table demo_bronze.hr_employee
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.hr
+  
+24/06/20 18:34:06 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:09  SQL status: OK in 3.0 seconds
+18:34:09  Timing info for model.tbd_tpcdi.hr_employee (execute): 18:34:06.658267 => 18:34:09.866935
+18:34:09  On model.tbd_tpcdi.hr_employee: ROLLBACK
+18:34:09  Spark adapter: NotImplemented: rollback
+18:34:09  On model.tbd_tpcdi.hr_employee: Close
+18:34:09  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b40370>]}
+18:34:09  12 of 45 OK created sql table model demo_bronze.hr_employee .................... [OK in 3.24s]
+18:34:09  Finished running node model.tbd_tpcdi.hr_employee
+18:34:09  Began running node model.tbd_tpcdi.reference_date
+18:34:09  13 of 45 START sql table model demo_bronze.reference_date ...................... [RUN]
+18:34:09  Re-using an available connection from the pool (formerly model.tbd_tpcdi.hr_employee, now model.tbd_tpcdi.reference_date)
+18:34:09  Began compiling node model.tbd_tpcdi.reference_date
+18:34:09  Writing injected SQL for node "model.tbd_tpcdi.reference_date"
+18:34:09  Timing info for model.tbd_tpcdi.reference_date (compile): 18:34:09.889476 => 18:34:09.904116
+18:34:09  Began executing node model.tbd_tpcdi.reference_date
+18:34:09  Using spark connection "model.tbd_tpcdi.reference_date"
+18:34:09  On model.tbd_tpcdi.reference_date: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_date"} */
+drop table if exists demo_bronze.reference_date
+18:34:09  Opening a new connection, currently in state closed
+18:34:10  SQL status: OK in 0.0 seconds
+18:34:10  Writing runtime sql for node "model.tbd_tpcdi.reference_date"
+18:34:10  Spark adapter: NotImplemented: add_begin_query
+18:34:10  Using spark connection "model.tbd_tpcdi.reference_date"
+18:34:10  On model.tbd_tpcdi.reference_date: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_date"} */
+
+  
+    
+        create table demo_bronze.reference_date
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    DATE_VALUE SK_DATE_ID,
+	DATE_VALUE,
+	DATE_DESC,
+	CALENDAR_YEAR_ID,
+	CALENDAR_YEAR_DESC,
+	CALENDAR_QTR_ID,
+	CALENDAR_QTR_DESC,
+	CALENDAR_MONTH_ID,
+	CALENDAR_MONTH_DESC,
+	CALENDAR_WEEK_ID,
+	CALENDAR_WEEK_DESC,
+	DAY_OF_WEEK_NUM,
+	DAY_OF_WEEK_DESC,
+	FISCAL_YEAR_ID,
+	FISCAL_YEAR_DESC,
+	FISCAL_QTR_ID,
+	FISCAL_QTR_DESC,
+	HOLIDAY_FLAG
+from digen.date
+  
+24/06/20 18:34:10 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:11  SQL status: OK in 1.0 seconds
+18:34:11  Timing info for model.tbd_tpcdi.reference_date (execute): 18:34:09.909379 => 18:34:11.281986
+18:34:11  On model.tbd_tpcdi.reference_date: ROLLBACK
+18:34:11  Spark adapter: NotImplemented: rollback
+18:34:11  On model.tbd_tpcdi.reference_date: Close
+18:34:11  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b38f40>]}
+18:34:11  13 of 45 OK created sql table model demo_bronze.reference_date ................. [OK in 1.41s]
+18:34:11  Finished running node model.tbd_tpcdi.reference_date
+18:34:11  Began running node model.tbd_tpcdi.reference_industry
+18:34:11  14 of 45 START sql table model demo_bronze.reference_industry .................. [RUN]
+18:34:11  Re-using an available connection from the pool (formerly model.tbd_tpcdi.reference_date, now model.tbd_tpcdi.reference_industry)
+18:34:11  Began compiling node model.tbd_tpcdi.reference_industry
+18:34:11  Writing injected SQL for node "model.tbd_tpcdi.reference_industry"
+18:34:11  Timing info for model.tbd_tpcdi.reference_industry (compile): 18:34:11.317022 => 18:34:11.324358
+18:34:11  Began executing node model.tbd_tpcdi.reference_industry
+18:34:11  Using spark connection "model.tbd_tpcdi.reference_industry"
+18:34:11  On model.tbd_tpcdi.reference_industry: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_industry"} */
+drop table if exists demo_bronze.reference_industry
+18:34:11  Opening a new connection, currently in state closed
+18:34:11  SQL status: OK in 0.0 seconds
+18:34:11  Writing runtime sql for node "model.tbd_tpcdi.reference_industry"
+18:34:11  Spark adapter: NotImplemented: add_begin_query
+18:34:11  Using spark connection "model.tbd_tpcdi.reference_industry"
+18:34:11  On model.tbd_tpcdi.reference_industry: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_industry"} */
+
+  
+    
+        create table demo_bronze.reference_industry
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.industry
+  
+24/06/20 18:34:11 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:12  SQL status: OK in 1.0 seconds
+18:34:12  Timing info for model.tbd_tpcdi.reference_industry (execute): 18:34:11.329885 => 18:34:12.213333
+18:34:12  On model.tbd_tpcdi.reference_industry: ROLLBACK
+18:34:12  Spark adapter: NotImplemented: rollback
+18:34:12  On model.tbd_tpcdi.reference_industry: Close
+18:34:12  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac29760>]}
+18:34:12  14 of 45 OK created sql table model demo_bronze.reference_industry ............. [OK in 0.92s]
+18:34:12  Finished running node model.tbd_tpcdi.reference_industry
+18:34:12  Began running node model.tbd_tpcdi.reference_status_type
+18:34:12  15 of 45 START sql table model demo_bronze.reference_status_type ............... [RUN]
+18:34:12  Re-using an available connection from the pool (formerly model.tbd_tpcdi.reference_industry, now model.tbd_tpcdi.reference_status_type)
+18:34:12  Began compiling node model.tbd_tpcdi.reference_status_type
+18:34:12  Writing injected SQL for node "model.tbd_tpcdi.reference_status_type"
+18:34:12  Timing info for model.tbd_tpcdi.reference_status_type (compile): 18:34:12.270146 => 18:34:12.284155
+18:34:12  Began executing node model.tbd_tpcdi.reference_status_type
+18:34:12  Using spark connection "model.tbd_tpcdi.reference_status_type"
+18:34:12  On model.tbd_tpcdi.reference_status_type: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_status_type"} */
+drop table if exists demo_bronze.reference_status_type
+18:34:12  Opening a new connection, currently in state closed
+18:34:12  SQL status: OK in 0.0 seconds
+18:34:12  Writing runtime sql for node "model.tbd_tpcdi.reference_status_type"
+18:34:12  Spark adapter: NotImplemented: add_begin_query
+18:34:12  Using spark connection "model.tbd_tpcdi.reference_status_type"
+18:34:12  On model.tbd_tpcdi.reference_status_type: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_status_type"} */
+
+  
+    
+        create table demo_bronze.reference_status_type
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.status_type
+  
+24/06/20 18:34:12 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:13  SQL status: OK in 1.0 seconds
+18:34:13  Timing info for model.tbd_tpcdi.reference_status_type (execute): 18:34:12.294855 => 18:34:13.154921
+18:34:13  On model.tbd_tpcdi.reference_status_type: ROLLBACK
+18:34:13  Spark adapter: NotImplemented: rollback
+18:34:13  On model.tbd_tpcdi.reference_status_type: Close
+18:34:13  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179adc070>]}
+18:34:13  15 of 45 OK created sql table model demo_bronze.reference_status_type .......... [OK in 0.91s]
+18:34:13  Finished running node model.tbd_tpcdi.reference_status_type
+18:34:13  Began running node model.tbd_tpcdi.reference_tax_rate
+18:34:13  16 of 45 START sql table model demo_bronze.reference_tax_rate .................. [RUN]
+18:34:13  Re-using an available connection from the pool (formerly model.tbd_tpcdi.reference_status_type, now model.tbd_tpcdi.reference_tax_rate)
+18:34:13  Began compiling node model.tbd_tpcdi.reference_tax_rate
+18:34:13  Writing injected SQL for node "model.tbd_tpcdi.reference_tax_rate"
+18:34:13  Timing info for model.tbd_tpcdi.reference_tax_rate (compile): 18:34:13.192003 => 18:34:13.208236
+18:34:13  Began executing node model.tbd_tpcdi.reference_tax_rate
+18:34:13  Using spark connection "model.tbd_tpcdi.reference_tax_rate"
+18:34:13  On model.tbd_tpcdi.reference_tax_rate: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_tax_rate"} */
+drop table if exists demo_bronze.reference_tax_rate
+18:34:13  Opening a new connection, currently in state closed
+18:34:13  SQL status: OK in 0.0 seconds
+18:34:13  Writing runtime sql for node "model.tbd_tpcdi.reference_tax_rate"
+18:34:13  Spark adapter: NotImplemented: add_begin_query
+18:34:13  Using spark connection "model.tbd_tpcdi.reference_tax_rate"
+18:34:13  On model.tbd_tpcdi.reference_tax_rate: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_tax_rate"} */
+
+  
+    
+        create table demo_bronze.reference_tax_rate
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.tax_rate
+  
+24/06/20 18:34:13 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:14  SQL status: OK in 1.0 seconds
+18:34:14  Timing info for model.tbd_tpcdi.reference_tax_rate (execute): 18:34:13.218862 => 18:34:14.133920
+18:34:14  On model.tbd_tpcdi.reference_tax_rate: ROLLBACK
+18:34:14  Spark adapter: NotImplemented: rollback
+18:34:14  On model.tbd_tpcdi.reference_tax_rate: Close
+18:34:14  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179abcdc0>]}
+18:34:14  16 of 45 OK created sql table model demo_bronze.reference_tax_rate ............. [OK in 0.96s]
+18:34:14  Finished running node model.tbd_tpcdi.reference_tax_rate
+18:34:14  Began running node model.tbd_tpcdi.reference_trade_type
+18:34:14  17 of 45 START sql table model demo_bronze.reference_trade_type ................ [RUN]
+18:34:14  Re-using an available connection from the pool (formerly model.tbd_tpcdi.reference_tax_rate, now model.tbd_tpcdi.reference_trade_type)
+18:34:14  Began compiling node model.tbd_tpcdi.reference_trade_type
+18:34:14  Writing injected SQL for node "model.tbd_tpcdi.reference_trade_type"
+18:34:14  Timing info for model.tbd_tpcdi.reference_trade_type (compile): 18:34:14.166229 => 18:34:14.176768
+18:34:14  Began executing node model.tbd_tpcdi.reference_trade_type
+18:34:14  Using spark connection "model.tbd_tpcdi.reference_trade_type"
+18:34:14  On model.tbd_tpcdi.reference_trade_type: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_trade_type"} */
+drop table if exists demo_bronze.reference_trade_type
+18:34:14  Opening a new connection, currently in state closed
+18:34:14  SQL status: OK in 0.0 seconds
+18:34:14  Writing runtime sql for node "model.tbd_tpcdi.reference_trade_type"
+18:34:14  Spark adapter: NotImplemented: add_begin_query
+18:34:14  Using spark connection "model.tbd_tpcdi.reference_trade_type"
+18:34:14  On model.tbd_tpcdi.reference_trade_type: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.reference_trade_type"} */
+
+  
+    
+        create table demo_bronze.reference_trade_type
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.trade_type
+  
+24/06/20 18:34:14 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:15  SQL status: OK in 1.0 seconds
+18:34:15  Timing info for model.tbd_tpcdi.reference_trade_type (execute): 18:34:14.181977 => 18:34:15.062692
+18:34:15  On model.tbd_tpcdi.reference_trade_type: ROLLBACK
+18:34:15  Spark adapter: NotImplemented: rollback
+18:34:15  On model.tbd_tpcdi.reference_trade_type: Close
+18:34:15  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b831c0>]}
+18:34:15  17 of 45 OK created sql table model demo_bronze.reference_trade_type ........... [OK in 0.91s]
+18:34:15  Finished running node model.tbd_tpcdi.reference_trade_type
+18:34:15  Began running node model.tbd_tpcdi.syndicated_prospect
+18:34:15  18 of 45 START sql table model demo_bronze.syndicated_prospect ................. [RUN]
+18:34:15  Re-using an available connection from the pool (formerly model.tbd_tpcdi.reference_trade_type, now model.tbd_tpcdi.syndicated_prospect)
+18:34:15  Began compiling node model.tbd_tpcdi.syndicated_prospect
+18:34:15  Writing injected SQL for node "model.tbd_tpcdi.syndicated_prospect"
+18:34:15  Timing info for model.tbd_tpcdi.syndicated_prospect (compile): 18:34:15.081415 => 18:34:15.091874
+18:34:15  Began executing node model.tbd_tpcdi.syndicated_prospect
+18:34:15  Using spark connection "model.tbd_tpcdi.syndicated_prospect"
+18:34:15  On model.tbd_tpcdi.syndicated_prospect: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.syndicated_prospect"} */
+drop table if exists demo_bronze.syndicated_prospect
+18:34:15  Opening a new connection, currently in state closed
+18:34:15  SQL status: OK in 0.0 seconds
+18:34:15  Writing runtime sql for node "model.tbd_tpcdi.syndicated_prospect"
+18:34:15  Spark adapter: NotImplemented: add_begin_query
+18:34:15  Using spark connection "model.tbd_tpcdi.syndicated_prospect"
+18:34:15  On model.tbd_tpcdi.syndicated_prospect: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.syndicated_prospect"} */
+
+  
+    
+        create table demo_bronze.syndicated_prospect
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from digen.prospect
+  
+24/06/20 18:34:15 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+18:34:20  SQL status: OK in 5.0 seconds
+18:34:20  Timing info for model.tbd_tpcdi.syndicated_prospect (execute): 18:34:15.095311 => 18:34:20.757393
+18:34:20  On model.tbd_tpcdi.syndicated_prospect: ROLLBACK
+18:34:20  Spark adapter: NotImplemented: rollback
+18:34:20  On model.tbd_tpcdi.syndicated_prospect: Close
+18:34:20  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac16fa0>]}
+18:34:20  18 of 45 OK created sql table model demo_bronze.syndicated_prospect ............ [OK in 5.69s]
+18:34:20  Finished running node model.tbd_tpcdi.syndicated_prospect
+18:34:20  Began running node model.tbd_tpcdi.daily_market
+18:34:20  19 of 45 START sql table model demo_silver.daily_market ........................ [RUN]
+18:34:20  Re-using an available connection from the pool (formerly model.tbd_tpcdi.syndicated_prospect, now model.tbd_tpcdi.daily_market)
+18:34:20  Began compiling node model.tbd_tpcdi.daily_market
+18:34:20  Writing injected SQL for node "model.tbd_tpcdi.daily_market"
+18:34:20  Timing info for model.tbd_tpcdi.daily_market (compile): 18:34:20.793551 => 18:34:20.801850
+18:34:20  Began executing node model.tbd_tpcdi.daily_market
+18:34:20  Using spark connection "model.tbd_tpcdi.daily_market"
+18:34:20  On model.tbd_tpcdi.daily_market: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market"} */
+drop table if exists demo_silver.daily_market
+18:34:20  Opening a new connection, currently in state closed
+18:34:21  SQL status: OK in 0.0 seconds
+18:34:21  Writing runtime sql for node "model.tbd_tpcdi.daily_market"
+18:34:21  Spark adapter: NotImplemented: add_begin_query
+18:34:21  Using spark connection "model.tbd_tpcdi.daily_market"
+18:34:21  On model.tbd_tpcdi.daily_market: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market"} */
+
+  
+    
+        create table demo_silver.daily_market
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with
+    s1 as (
+        select
+            -- dm_date,
+            min(dm_low) over (
+                partition by dm_s_symb
+                order by dm_date asc
+                rows between 364 preceding and 0 following  -- CURRENT ROW
+            ) fifty_two_week_low,
+            max(dm_high) over (
+                partition by dm_s_symb
+                order by dm_date asc
+                rows between 364 preceding and 0 following  -- CURRENT ROW
+            ) fifty_two_week_high,
+            *
+        from demo_bronze.brokerage_daily_market
+    ),
+    s2 as (
+        select a.*, 
+               b.dm_date as fifty_two_week_low_date, 
+               c.dm_date as fifty_two_week_high_date
+        from s1 a
+        join
+            s1 b
+            on a.dm_s_symb = b.dm_s_symb
+            and a.fifty_two_week_low = b.dm_low
+            and b.dm_date <= a.dm_date
+        join
+            s1 c
+            on a.dm_s_symb = c.dm_s_symb
+            and a.fifty_two_week_high = c.dm_high
+            and c.dm_date <= a.dm_date
+    )
+
+SELECT * FROM (
+  SELECT *, row_number() over (
+        partition by dm_s_symb, dm_date
+        order by fifty_two_week_low_date, fifty_two_week_high_date
+    )rank FROM s2) tmp WHERE rank = 1
+  
+24/06/20 18:34:21 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:13:25  SQL status: OK in 2344.0 seconds
+19:13:25  Timing info for model.tbd_tpcdi.daily_market (execute): 18:34:20.805300 => 19:13:25.279532
+19:13:25  On model.tbd_tpcdi.daily_market: ROLLBACK
+19:13:25  Spark adapter: NotImplemented: rollback
+19:13:25  On model.tbd_tpcdi.daily_market: Close
+19:13:25  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b40370>]}
+19:13:25  19 of 45 OK created sql table model demo_silver.daily_market ................... [OK in 2344.51s]
+19:13:25  Finished running node model.tbd_tpcdi.daily_market
+19:13:25  Began running node model.tbd_tpcdi.daily_market-checkpoint
+19:13:25  20 of 45 START sql table model demo_silver.daily_market-checkpoint ............. [RUN]
+19:13:25  Re-using an available connection from the pool (formerly model.tbd_tpcdi.daily_market, now model.tbd_tpcdi.daily_market-checkpoint)
+19:13:25  Began compiling node model.tbd_tpcdi.daily_market-checkpoint
+19:13:25  Writing injected SQL for node "model.tbd_tpcdi.daily_market-checkpoint"
+19:13:25  Timing info for model.tbd_tpcdi.daily_market-checkpoint (compile): 19:13:25.338997 => 19:13:25.354170
+19:13:25  Began executing node model.tbd_tpcdi.daily_market-checkpoint
+19:13:25  Using spark connection "model.tbd_tpcdi.daily_market-checkpoint"
+19:13:25  On model.tbd_tpcdi.daily_market-checkpoint: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+19:13:25  Opening a new connection, currently in state closed
+19:13:25  Spark adapter: Error while running:
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+19:13:25  Spark adapter: 
+Possibly unquoted identifier daily_market-checkpoint detected. Please consider quoting it with back-quotes as `daily_market-checkpoint`(line 2, pos 45)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+---------------------------------------------^^^
+
+19:13:25  Spark adapter: Error while running:
+macro drop_relation
+19:13:25  Spark adapter: 
+Possibly unquoted identifier daily_market-checkpoint detected. Please consider quoting it with back-quotes as `daily_market-checkpoint`(line 2, pos 45)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+---------------------------------------------^^^
+
+19:13:25  Timing info for model.tbd_tpcdi.daily_market-checkpoint (execute): 19:13:25.357288 => 19:13:25.421717
+19:13:25  On model.tbd_tpcdi.daily_market-checkpoint: Close
+19:13:25  Unhandled error while executing 
+Possibly unquoted identifier daily_market-checkpoint detected. Please consider quoting it with back-quotes as `daily_market-checkpoint`(line 2, pos 45)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+---------------------------------------------^^^
+19:13:25  Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 380, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 326, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 427, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/run.py", line 292, in execute
+    result = MacroGenerator(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 99, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/impl.py", line 142, in drop_relation
+    self.execute_macro(DROP_RELATION_MACRO_NAME, kwargs={"relation": relation})
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 1112, in execute_macro
+    result = macro_function(**kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 20, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 29, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 330, in __call__
+    return self.call_macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/clients/jinja.py", line 257, in call_macro
+    return macro(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 768, in __call__
+    return self._invoke(arguments, autoescape)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 782, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 52, in macro
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/sandbox.py", line 394, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 310, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 138, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 80, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/spark/session.py", line 227, in execute
+    self._cursor.execute(sql)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/spark/session.py", line 124, in execute
+    self._df = spark_session.sql(sql)
+  File "/usr/local/lib/python3.8/dist-packages/pyspark/sql/session.py", line 1034, in sql
+    return DataFrame(self._jsparkSession.sql(sqlQuery), self)
+  File "/usr/local/lib/python3.8/dist-packages/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/usr/local/lib/python3.8/dist-packages/pyspark/sql/utils.py", line 196, in deco
+    raise converted from None
+pyspark.sql.utils.ParseException: 
+Possibly unquoted identifier daily_market-checkpoint detected. Please consider quoting it with back-quotes as `daily_market-checkpoint`(line 2, pos 45)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+---------------------------------------------^^^
+
+
+19:13:25  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179aa70a0>]}
+19:13:25  20 of 45 ERROR creating sql table model demo_silver.daily_market-checkpoint .... [ERROR in 0.13s]
+19:13:25  Finished running node model.tbd_tpcdi.daily_market-checkpoint
+19:13:25  Began running node model.tbd_tpcdi.employees
+19:13:25  21 of 45 START sql table model demo_silver.employees ........................... [RUN]
+19:13:25  Re-using an available connection from the pool (formerly model.tbd_tpcdi.daily_market-checkpoint, now model.tbd_tpcdi.employees)
+19:13:25  Began compiling node model.tbd_tpcdi.employees
+19:13:25  Writing injected SQL for node "model.tbd_tpcdi.employees"
+19:13:25  Timing info for model.tbd_tpcdi.employees (compile): 19:13:25.475656 => 19:13:25.499929
+19:13:25  Began executing node model.tbd_tpcdi.employees
+19:13:25  Using spark connection "model.tbd_tpcdi.employees"
+19:13:25  On model.tbd_tpcdi.employees: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.employees"} */
+drop table if exists demo_silver.employees
+19:13:25  Opening a new connection, currently in state closed
+19:13:25  SQL status: OK in 0.0 seconds
+19:13:25  Writing runtime sql for node "model.tbd_tpcdi.employees"
+19:13:25  Spark adapter: NotImplemented: add_begin_query
+19:13:25  Using spark connection "model.tbd_tpcdi.employees"
+19:13:25  On model.tbd_tpcdi.employees: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.employees"} */
+
+  
+    
+        create table demo_silver.employees
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select 
+    employee_id,
+    manager_id,
+    employee_first_name first_name,
+    employee_last_name last_name,
+    employee_mi middle_initial,
+    employee_job_code job_code,
+    employee_branch branch,
+    employee_office office,
+    employee_phone phone
+from demo_bronze.hr_employee
+  
+24/06/20 19:13:26 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:13:29  SQL status: OK in 4.0 seconds
+19:13:29  Timing info for model.tbd_tpcdi.employees (execute): 19:13:25.507498 => 19:13:29.593762
+19:13:29  On model.tbd_tpcdi.employees: ROLLBACK
+19:13:29  Spark adapter: NotImplemented: rollback
+19:13:29  On model.tbd_tpcdi.employees: Close
+19:13:29  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179bc8d60>]}
+19:13:29  21 of 45 OK created sql table model demo_silver.employees ...................... [OK in 4.13s]
+19:13:29  Finished running node model.tbd_tpcdi.employees
+19:13:29  Began running node model.tbd_tpcdi.date
+19:13:29  22 of 45 START sql table model demo_silver.date ................................ [RUN]
+19:13:29  Re-using an available connection from the pool (formerly model.tbd_tpcdi.employees, now model.tbd_tpcdi.date)
+19:13:29  Began compiling node model.tbd_tpcdi.date
+19:13:29  Writing injected SQL for node "model.tbd_tpcdi.date"
+19:13:29  Timing info for model.tbd_tpcdi.date (compile): 19:13:29.619942 => 19:13:29.629247
+19:13:29  Began executing node model.tbd_tpcdi.date
+19:13:29  Using spark connection "model.tbd_tpcdi.date"
+19:13:29  On model.tbd_tpcdi.date: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.date"} */
+drop table if exists demo_silver.date
+19:13:29  Opening a new connection, currently in state closed
+19:13:29  SQL status: OK in 0.0 seconds
+19:13:29  Writing runtime sql for node "model.tbd_tpcdi.date"
+19:13:29  Spark adapter: NotImplemented: add_begin_query
+19:13:29  Using spark connection "model.tbd_tpcdi.date"
+19:13:29  On model.tbd_tpcdi.date: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.date"} */
+
+  
+    
+        create table demo_silver.date
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from demo_bronze.reference_date
+  
+24/06/20 19:13:29 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:13:31  SQL status: OK in 1.0 seconds
+19:13:31  Timing info for model.tbd_tpcdi.date (execute): 19:13:29.631737 => 19:13:31.263129
+19:13:31  On model.tbd_tpcdi.date: ROLLBACK
+19:13:31  Spark adapter: NotImplemented: rollback
+19:13:31  On model.tbd_tpcdi.date: Close
+19:13:31  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179aa7580>]}
+19:13:31  22 of 45 OK created sql table model demo_silver.date ........................... [OK in 1.67s]
+19:13:31  Finished running node model.tbd_tpcdi.date
+19:13:31  Began running node model.tbd_tpcdi.companies
+19:13:31  23 of 45 START sql table model demo_silver.companies ........................... [RUN]
+19:13:31  Re-using an available connection from the pool (formerly model.tbd_tpcdi.date, now model.tbd_tpcdi.companies)
+19:13:31  Began compiling node model.tbd_tpcdi.companies
+19:13:31  Writing injected SQL for node "model.tbd_tpcdi.companies"
+19:13:31  Timing info for model.tbd_tpcdi.companies (compile): 19:13:31.293878 => 19:13:31.306496
+19:13:31  Began executing node model.tbd_tpcdi.companies
+19:13:31  Using spark connection "model.tbd_tpcdi.companies"
+19:13:31  On model.tbd_tpcdi.companies: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.companies"} */
+drop table if exists demo_silver.companies
+19:13:31  Opening a new connection, currently in state closed
+19:13:31  SQL status: OK in 0.0 seconds
+19:13:31  Writing runtime sql for node "model.tbd_tpcdi.companies"
+19:13:31  Spark adapter: NotImplemented: add_begin_query
+19:13:31  Using spark connection "model.tbd_tpcdi.companies"
+19:13:31  On model.tbd_tpcdi.companies: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.companies"} */
+
+  
+    
+        create table demo_silver.companies
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    cik as company_id,
+    st.st_name status,
+    company_name name,
+    ind.in_name industry,
+    ceo_name ceo,
+    address_line1,
+    address_line2,
+    postal_code,
+    city,
+    state_province,
+    country,
+    description,
+    founding_date,
+    sp_rating,
+    pts as effective_timestamp,
+     ifnull(
+            lag(pts) over (
+                partition by cik
+                order by
+                pts desc
+            ) - INTERVAL 1 milliseconds,
+        to_timestamp('9999-12-31 23:59:59.999')
+    ) as end_timestamp,
+    CASE
+        WHEN (
+            row_number() over (
+                partition by cik
+                order by
+                pts desc
+            ) = 1
+        ) THEN TRUE
+        ELSE FALSE
+    END as IS_CURRENT
+from demo_bronze.finwire_company cmp
+join demo_bronze.reference_status_type st on cmp.status = st.st_id
+join demo_bronze.reference_industry ind on cmp.industry_id = ind.in_id
+  
+24/06/20 19:13:31 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:13:37  SQL status: OK in 6.0 seconds
+19:13:37  Timing info for model.tbd_tpcdi.companies (execute): 19:13:31.310161 => 19:13:37.659349
+19:13:37  On model.tbd_tpcdi.companies: ROLLBACK
+19:13:37  Spark adapter: NotImplemented: rollback
+19:13:37  On model.tbd_tpcdi.companies: Close
+19:13:37  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b09940>]}
+19:13:38  23 of 45 OK created sql table model demo_silver.companies ...................... [OK in 6.38s]
+19:13:38  Finished running node model.tbd_tpcdi.companies
+19:13:38  Began running node model.tbd_tpcdi.accounts
+19:13:38  24 of 45 START sql table model demo_silver.accounts ............................ [RUN]
+19:13:38  Re-using an available connection from the pool (formerly model.tbd_tpcdi.companies, now model.tbd_tpcdi.accounts)
+19:13:38  Began compiling node model.tbd_tpcdi.accounts
+19:13:38  Writing injected SQL for node "model.tbd_tpcdi.accounts"
+19:13:38  Timing info for model.tbd_tpcdi.accounts (compile): 19:13:38.383561 => 19:13:38.393115
+19:13:38  Began executing node model.tbd_tpcdi.accounts
+19:13:38  Using spark connection "model.tbd_tpcdi.accounts"
+19:13:38  On model.tbd_tpcdi.accounts: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.accounts"} */
+drop table if exists demo_silver.accounts
+19:13:38  Opening a new connection, currently in state closed
+19:13:38  SQL status: OK in 0.0 seconds
+19:13:38  Writing runtime sql for node "model.tbd_tpcdi.accounts"
+19:13:38  Spark adapter: NotImplemented: add_begin_query
+19:13:38  Using spark connection "model.tbd_tpcdi.accounts"
+19:13:38  On model.tbd_tpcdi.accounts: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.accounts"} */
+
+  
+    
+        create table demo_silver.accounts
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    action_type,
+    decode(action_type,
+      'NEW','Active',
+      'ADDACCT','Active',
+      'UPDACCT','Active',
+      'CLOSEACCT','Inactive') status,
+    ca_id account_id,
+    ca_name account_desc,
+    c_id customer_id,
+    c_tax_id tax_id,
+    c_gndr gender,
+    c_tier tier,
+    c_dob dob,
+    c_l_name last_name,
+    c_f_name first_name,
+    c_m_name middle_name,
+    c_adline1 address_line1,
+    c_adline2 address_line2,
+    c_zipcode postal_code,
+    c_city city,
+    c_state_prov state_province,
+    c_ctry country,
+    c_prim_email primary_email,
+    c_alt_email alternate_email,
+    c_phone_1 phone1,
+    c_phone_2 phone2,
+    c_phone_3 phone3,
+    c_lcl_tx_id local_tax_rate_name,
+    ltx.tx_rate local_tax_rate,
+    c_nat_tx_id national_tax_rate_name,
+    ntx.tx_rate national_tax_rate,
+    ca_tax_st tax_status,
+    ca_b_id broker_id,
+    action_ts as effective_timestamp,
+    ifnull(
+        lag(action_ts) over (
+            partition by ca_id
+            order by
+            action_ts desc
+        ) - INTERVAL 1 milliseconds,
+        to_timestamp('9999-12-31 23:59:59.999')
+    ) as end_timestamp,
+    CASE
+        WHEN (
+            row_number() over (
+                partition by ca_id
+                order by
+                action_ts desc
+            ) = 1
+        ) THEN TRUE
+        ELSE FALSE
+    END as IS_CURRENT
+from
+    demo_bronze.crm_customer_mgmt c
+left join
+    demo_bronze.reference_tax_rate ntx
+on
+    c.c_nat_tx_id = ntx.tx_id
+left join
+    demo_bronze.reference_tax_rate ltx
+on
+    c.c_lcl_tx_id = ltx.tx_id
+where ca_id is not null
+  
+24/06/20 19:13:38 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:13:52  SQL status: OK in 14.0 seconds
+19:13:52  Timing info for model.tbd_tpcdi.accounts (execute): 19:13:38.395607 => 19:13:52.329506
+19:13:52  On model.tbd_tpcdi.accounts: ROLLBACK
+19:13:52  Spark adapter: NotImplemented: rollback
+19:13:52  On model.tbd_tpcdi.accounts: Close
+19:13:52  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c5d8490>]}
+19:13:52  24 of 45 OK created sql table model demo_silver.accounts ....................... [OK in 13.97s]
+19:13:52  Finished running node model.tbd_tpcdi.accounts
+19:13:52  Began running node model.tbd_tpcdi.customers
+19:13:52  25 of 45 START sql table model demo_silver.customers ........................... [RUN]
+19:13:52  Re-using an available connection from the pool (formerly model.tbd_tpcdi.accounts, now model.tbd_tpcdi.customers)
+19:13:52  Began compiling node model.tbd_tpcdi.customers
+19:13:52  Writing injected SQL for node "model.tbd_tpcdi.customers"
+19:13:52  Timing info for model.tbd_tpcdi.customers (compile): 19:13:52.368265 => 19:13:52.380909
+19:13:52  Began executing node model.tbd_tpcdi.customers
+19:13:52  Using spark connection "model.tbd_tpcdi.customers"
+19:13:52  On model.tbd_tpcdi.customers: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.customers"} */
+drop table if exists demo_silver.customers
+19:13:52  Opening a new connection, currently in state closed
+19:13:52  SQL status: OK in 0.0 seconds
+19:13:52  Writing runtime sql for node "model.tbd_tpcdi.customers"
+19:13:52  Spark adapter: NotImplemented: add_begin_query
+19:13:52  Using spark connection "model.tbd_tpcdi.customers"
+19:13:52  On model.tbd_tpcdi.customers: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.customers"} */
+
+  
+    
+        create table demo_silver.customers
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    action_type,
+    decode(action_type,
+      'NEW','Active',
+      'ADDACCT','Active',
+      'UPDACCT','Active',
+      'UPDCUST','Active',
+      'INACT','Inactive') status,
+    c_id customer_id,
+    ca_id account_id,
+    c_tax_id tax_id,
+    c_gndr gender,
+    c_tier tier,
+    c_dob dob,
+    c_l_name last_name,
+    c_f_name first_name,
+    c_m_name middle_name,
+    c_adline1 address_line1,
+    c_adline2 address_line2,
+    c_zipcode postal_code,
+    c_city city,
+    c_state_prov state_province,
+    c_ctry country,
+    c_prim_email primary_email,
+    c_alt_email alternate_email,
+    c_phone_1 phone1,
+    c_phone_2 phone2,
+    c_phone_3 phone3,
+    c_lcl_tx_id local_tax_rate_name,
+    ltx.tx_rate local_tax_rate,
+    c_nat_tx_id national_tax_rate_name,
+    ntx.tx_rate national_tax_rate,
+    ca_tax_st account_tax_status,
+    ca_b_id broker_id,
+    action_ts as effective_timestamp,
+    ifnull(
+            lag(action_ts) over (
+                partition by c_id
+                order by
+                action_ts desc
+            ) - INTERVAL 1 milliseconds,
+        to_timestamp('9999-12-31 23:59:59.999')
+    ) as end_timestamp,
+    CASE
+        WHEN (
+            row_number() over (
+                partition by c_id
+                order by
+                action_ts desc
+            ) = 1
+        ) THEN TRUE
+        ELSE FALSE
+    END as IS_CURRENT
+from
+    demo_bronze.crm_customer_mgmt c
+left join
+    demo_bronze.reference_tax_rate ntx
+on
+    c.c_nat_tx_id = ntx.tx_id
+left join
+    demo_bronze.reference_tax_rate ltx
+on
+    c.c_lcl_tx_id = ltx.tx_id
+where action_type in ('NEW', 'INACT', 'UPDCUST')
+  
+24/06/20 19:13:52 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:14:03  SQL status: OK in 11.0 seconds
+19:14:03  Timing info for model.tbd_tpcdi.customers (execute): 19:13:52.386057 => 19:14:03.431497
+19:14:03  On model.tbd_tpcdi.customers: ROLLBACK
+19:14:03  Spark adapter: NotImplemented: rollback
+19:14:03  On model.tbd_tpcdi.customers: Close
+19:14:03  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac0dc70>]}
+19:14:03  25 of 45 OK created sql table model demo_silver.customers ...................... [OK in 11.07s]
+19:14:03  Finished running node model.tbd_tpcdi.customers
+19:14:03  Began running node model.tbd_tpcdi.trades_history
+19:14:03  26 of 45 START sql table model demo_silver.trades_history ...................... [RUN]
+19:14:03  Re-using an available connection from the pool (formerly model.tbd_tpcdi.customers, now model.tbd_tpcdi.trades_history)
+19:14:03  Began compiling node model.tbd_tpcdi.trades_history
+19:14:03  Writing injected SQL for node "model.tbd_tpcdi.trades_history"
+19:14:03  Timing info for model.tbd_tpcdi.trades_history (compile): 19:14:03.505581 => 19:14:03.533445
+19:14:03  Began executing node model.tbd_tpcdi.trades_history
+19:14:03  Using spark connection "model.tbd_tpcdi.trades_history"
+19:14:03  On model.tbd_tpcdi.trades_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.trades_history"} */
+drop table if exists demo_silver.trades_history
+19:14:03  Opening a new connection, currently in state closed
+19:14:03  SQL status: OK in 0.0 seconds
+19:14:03  Writing runtime sql for node "model.tbd_tpcdi.trades_history"
+19:14:03  Spark adapter: NotImplemented: add_begin_query
+19:14:03  Using spark connection "model.tbd_tpcdi.trades_history"
+19:14:03  On model.tbd_tpcdi.trades_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.trades_history"} */
+
+  
+    
+        create table demo_silver.trades_history
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    t_id trade_id,
+    t_dts trade_timestamp,
+    t_ca_id account_id,
+    ts.st_name trade_status,
+    tt_name trade_type,
+    case t_is_cash
+        when true then 'Cash'
+        when false then 'Margin'
+    end transaction_type,
+    t_s_symb symbol,
+    t_exec_name executor_name,
+    t_qty quantity,
+    t_bid_price bid_price,
+    t_trade_price trade_price,
+    t_chrg fee,
+    t_comm commission,
+    t_tax tax,
+    us.st_name update_status,
+    th_dts effective_timestamp,
+    ifnull(
+        lag(th_dts) over (
+            partition by t_id
+            order by
+            th_dts desc
+        ) - INTERVAL 1 milliseconds,
+        to_timestamp('9999-12-31 23:59:59.999')
+    ) as end_timestamp,
+    CASE
+        WHEN (
+            row_number() over (
+                partition by t_id
+                order by
+                th_dts desc
+            ) = 1
+        ) THEN TRUE
+        ELSE FALSE
+    END as IS_CURRENT
+from
+    demo_bronze.brokerage_trade 
+join
+    demo_bronze.brokerage_trade_history  
+on
+    t_id = th_t_id
+join
+    demo_bronze.reference_trade_type 
+on
+    t_tt_id = tt_id
+join
+    demo_bronze.reference_status_type ts
+on
+    t_st_id = ts.st_id
+join
+    demo_bronze.reference_status_type us
+on th_st_id = us.st_id
+  
+24/06/20 19:14:04 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:22:10  SQL status: OK in 487.0 seconds
+19:22:10  Timing info for model.tbd_tpcdi.trades_history (execute): 19:14:03.543384 => 19:22:10.546371
+19:22:10  On model.tbd_tpcdi.trades_history: ROLLBACK
+19:22:10  Spark adapter: NotImplemented: rollback
+19:22:10  On model.tbd_tpcdi.trades_history: Close
+19:22:10  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17b4c2f10>]}
+19:22:10  26 of 45 OK created sql table model demo_silver.trades_history ................. [OK in 487.08s]
+19:22:10  Finished running node model.tbd_tpcdi.trades_history
+19:22:10  Began running node model.tbd_tpcdi.dim_broker
+19:22:10  27 of 45 START sql table model demo_gold.dim_broker ............................ [RUN]
+19:22:10  Re-using an available connection from the pool (formerly model.tbd_tpcdi.trades_history, now model.tbd_tpcdi.dim_broker)
+19:22:10  Began compiling node model.tbd_tpcdi.dim_broker
+19:22:10  Writing injected SQL for node "model.tbd_tpcdi.dim_broker"
+19:22:10  Timing info for model.tbd_tpcdi.dim_broker (compile): 19:22:10.603840 => 19:22:10.646741
+19:22:10  Began executing node model.tbd_tpcdi.dim_broker
+19:22:10  Using spark connection "model.tbd_tpcdi.dim_broker"
+19:22:10  On model.tbd_tpcdi.dim_broker: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_broker"} */
+drop table if exists demo_gold.dim_broker
+19:22:10  Opening a new connection, currently in state closed
+19:22:10  SQL status: OK in 0.0 seconds
+19:22:10  Writing runtime sql for node "model.tbd_tpcdi.dim_broker"
+19:22:10  Spark adapter: NotImplemented: add_begin_query
+19:22:10  Using spark connection "model.tbd_tpcdi.dim_broker"
+19:22:10  On model.tbd_tpcdi.dim_broker: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_broker"} */
+
+  
+    
+        create table demo_gold.dim_broker
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    md5(cast(concat(coalesce(cast(employee_id as string), '_dbt_utils_surrogate_key_null_')) as string)) sk_broker_id,
+    employee_id broker_id,
+    manager_id,
+    first_name,
+    last_name,
+    middle_initial,
+    job_code,
+    branch,
+    office,
+    phone
+from
+    demo_silver.employees
+  
+24/06/20 19:22:10 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:22:15  SQL status: OK in 5.0 seconds
+19:22:15  Timing info for model.tbd_tpcdi.dim_broker (execute): 19:22:10.656135 => 19:22:15.624954
+19:22:15  On model.tbd_tpcdi.dim_broker: ROLLBACK
+19:22:15  Spark adapter: NotImplemented: rollback
+19:22:15  On model.tbd_tpcdi.dim_broker: Close
+19:22:15  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a96f70>]}
+19:22:15  27 of 45 OK created sql table model demo_gold.dim_broker ....................... [OK in 5.04s]
+19:22:15  Finished running node model.tbd_tpcdi.dim_broker
+19:22:15  Began running node model.tbd_tpcdi.dim_date
+19:22:15  28 of 45 START sql table model demo_gold.dim_date .............................. [RUN]
+19:22:15  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_broker, now model.tbd_tpcdi.dim_date)
+19:22:15  Began compiling node model.tbd_tpcdi.dim_date
+19:22:15  Writing injected SQL for node "model.tbd_tpcdi.dim_date"
+19:22:15  Timing info for model.tbd_tpcdi.dim_date (compile): 19:22:15.652730 => 19:22:15.662090
+19:22:15  Began executing node model.tbd_tpcdi.dim_date
+19:22:15  Using spark connection "model.tbd_tpcdi.dim_date"
+19:22:15  On model.tbd_tpcdi.dim_date: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_date"} */
+drop table if exists demo_gold.dim_date
+19:22:15  Opening a new connection, currently in state closed
+19:22:15  SQL status: OK in 0.0 seconds
+19:22:15  Writing runtime sql for node "model.tbd_tpcdi.dim_date"
+19:22:15  Spark adapter: NotImplemented: add_begin_query
+19:22:15  Using spark connection "model.tbd_tpcdi.dim_date"
+19:22:15  On model.tbd_tpcdi.dim_date: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_date"} */
+
+  
+    
+        create table demo_gold.dim_date
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select *
+from demo_silver.date
+  
+24/06/20 19:22:15 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:22:17  SQL status: OK in 1.0 seconds
+19:22:17  Timing info for model.tbd_tpcdi.dim_date (execute): 19:22:15.665286 => 19:22:17.170289
+19:22:17  On model.tbd_tpcdi.dim_date: ROLLBACK
+19:22:17  Spark adapter: NotImplemented: rollback
+19:22:17  On model.tbd_tpcdi.dim_date: Close
+19:22:17  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b83b50>]}
+19:22:17  28 of 45 OK created sql table model demo_gold.dim_date ......................... [OK in 1.53s]
+19:22:17  Finished running node model.tbd_tpcdi.dim_date
+19:22:17  Began running node model.tbd_tpcdi.dim_company
+19:22:17  29 of 45 START sql table model demo_gold.dim_company ........................... [RUN]
+19:22:17  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_date, now model.tbd_tpcdi.dim_company)
+19:22:17  Began compiling node model.tbd_tpcdi.dim_company
+19:22:17  Writing injected SQL for node "model.tbd_tpcdi.dim_company"
+19:22:17  Timing info for model.tbd_tpcdi.dim_company (compile): 19:22:17.185537 => 19:22:17.201400
+19:22:17  Began executing node model.tbd_tpcdi.dim_company
+19:22:17  Using spark connection "model.tbd_tpcdi.dim_company"
+19:22:17  On model.tbd_tpcdi.dim_company: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_company"} */
+drop table if exists demo_gold.dim_company
+19:22:17  Opening a new connection, currently in state closed
+19:22:17  SQL status: OK in 0.0 seconds
+19:22:17  Writing runtime sql for node "model.tbd_tpcdi.dim_company"
+19:22:17  Spark adapter: NotImplemented: add_begin_query
+19:22:17  Using spark connection "model.tbd_tpcdi.dim_company"
+19:22:17  On model.tbd_tpcdi.dim_company: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_company"} */
+
+  
+    
+        create table demo_gold.dim_company
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    md5(cast(concat(coalesce(cast(company_id as string), '_dbt_utils_surrogate_key_null_'), '-', coalesce(cast(effective_timestamp as string), '_dbt_utils_surrogate_key_null_')) as string)) sk_company_id,
+    company_id,
+    status,
+    name,
+    industry,
+    ceo,
+    address_line1,
+    address_line2,
+    postal_code,
+    city,
+    state_province,
+    country,
+    description,
+    founding_date,
+    sp_rating,
+    case
+        when
+            sp_rating in (
+                'BB',
+                'B',
+                'CCC',
+                'CC',
+                'C',
+                'D',
+                'BB+',
+                'B+',
+                'CCC+',
+                'BB-',
+                'B-',
+                'CCC-'
+            )
+        then true
+        else false
+    end as is_lowgrade,
+    effective_timestamp,
+    end_timestamp,
+    is_current
+from demo_silver.companies
+  
+24/06/20 19:22:17 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:22:20  SQL status: OK in 3.0 seconds
+19:22:20  Timing info for model.tbd_tpcdi.dim_company (execute): 19:22:17.203988 => 19:22:20.238164
+19:22:20  On model.tbd_tpcdi.dim_company: ROLLBACK
+19:22:20  Spark adapter: NotImplemented: rollback
+19:22:20  On model.tbd_tpcdi.dim_company: Close
+19:22:20  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b593a0>]}
+19:22:20  29 of 45 OK created sql table model demo_gold.dim_company ...................... [OK in 3.07s]
+19:22:20  Finished running node model.tbd_tpcdi.dim_company
+19:22:20  Began running node model.tbd_tpcdi.financials
+19:22:20  30 of 45 START sql table model demo_silver.financials .......................... [RUN]
+19:22:20  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_company, now model.tbd_tpcdi.financials)
+19:22:20  Began compiling node model.tbd_tpcdi.financials
+19:22:20  Writing injected SQL for node "model.tbd_tpcdi.financials"
+19:22:20  Timing info for model.tbd_tpcdi.financials (compile): 19:22:20.274344 => 19:22:20.285614
+19:22:20  Began executing node model.tbd_tpcdi.financials
+19:22:20  Using spark connection "model.tbd_tpcdi.financials"
+19:22:20  On model.tbd_tpcdi.financials: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.financials"} */
+drop table if exists demo_silver.financials
+19:22:20  Opening a new connection, currently in state closed
+19:22:20  SQL status: OK in 0.0 seconds
+19:22:20  Writing runtime sql for node "model.tbd_tpcdi.financials"
+19:22:20  Spark adapter: NotImplemented: add_begin_query
+19:22:20  Using spark connection "model.tbd_tpcdi.financials"
+19:22:20  On model.tbd_tpcdi.financials: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.financials"} */
+
+  
+    
+        create table demo_silver.financials
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select
+        YEAR,
+        QUARTER,
+        QUARTER_START_DATE,
+        POSTING_DATE,
+        REVENUE,
+        EARNINGS,
+        EPS,
+        DILUTED_EPS,
+        MARGIN,
+        INVENTORY,
+        ASSETS,
+        LIABILITIES,
+        SH_OUT,
+        DILUTED_SH_OUT,
+        coalesce(c1.name,c2.name) company_name,
+        coalesce(c1.company_id, c2.company_id) company_id,
+        pts as effective_timestamp
+    from demo_bronze.finwire_financial s 
+    left join demo_silver.companies c1
+    on s.cik = c1.company_id
+    and pts between c1.effective_timestamp and c1.end_timestamp
+    left join demo_silver.companies c2
+    on s.company_name = c2.name
+    and pts between c2.effective_timestamp and c2.end_timestamp
+)
+select
+    *,
+    ifnull(
+        lag(effective_timestamp) over (
+            partition by company_id
+            order by
+            effective_timestamp desc
+        ) - INTERVAL 1 milliseconds,
+        to_timestamp('9999-12-31 23:59:59.999')
+    ) as end_timestamp,
+    CASE
+        WHEN (
+            row_number() over (
+                partition by company_id
+                order by
+                effective_timestamp desc
+            ) = 1
+        ) THEN TRUE
+        ELSE FALSE
+    END as IS_CURRENT
+from s1
+  
+24/06/20 19:22:20 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:25:07  SQL status: OK in 167.0 seconds
+19:25:07  Timing info for model.tbd_tpcdi.financials (execute): 19:22:20.290661 => 19:25:07.302019
+19:25:07  On model.tbd_tpcdi.financials: ROLLBACK
+19:25:07  Spark adapter: NotImplemented: rollback
+19:25:07  On model.tbd_tpcdi.financials: Close
+19:25:07  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a29fa0>]}
+19:25:07  30 of 45 OK created sql table model demo_silver.financials ..................... [OK in 167.05s]
+19:25:07  Finished running node model.tbd_tpcdi.financials
+19:25:07  Began running node model.tbd_tpcdi.securities
+19:25:07  31 of 45 START sql table model demo_silver.securities .......................... [RUN]
+19:25:07  Re-using an available connection from the pool (formerly model.tbd_tpcdi.financials, now model.tbd_tpcdi.securities)
+19:25:07  Began compiling node model.tbd_tpcdi.securities
+19:25:07  Writing injected SQL for node "model.tbd_tpcdi.securities"
+19:25:07  Timing info for model.tbd_tpcdi.securities (compile): 19:25:07.357385 => 19:25:07.374172
+19:25:07  Began executing node model.tbd_tpcdi.securities
+19:25:07  Using spark connection "model.tbd_tpcdi.securities"
+19:25:07  On model.tbd_tpcdi.securities: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.securities"} */
+drop table if exists demo_silver.securities
+19:25:07  Opening a new connection, currently in state closed
+19:25:07  SQL status: OK in 0.0 seconds
+19:25:07  Writing runtime sql for node "model.tbd_tpcdi.securities"
+19:25:07  Spark adapter: NotImplemented: add_begin_query
+19:25:07  Using spark connection "model.tbd_tpcdi.securities"
+19:25:07  On model.tbd_tpcdi.securities: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.securities"} */
+
+  
+    
+        create table demo_silver.securities
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    symbol,
+    issue_type,
+    case s.status
+        when 'ACTV' then 'Active'
+        when 'INAC' then 'Inactive'
+        else null
+    end status,
+    s.name,
+    ex_id exchange_id,
+    sh_out shares_outstanding,
+    first_trade_date,
+    first_exchange_date,
+    dividend,
+    coalesce(c1.name,c2.name) company_name,
+    coalesce(c1.company_id, c2.company_id) company_id,
+    pts as effective_timestamp,
+    ifnull(
+        lag(pts) over (
+            partition by symbol
+            order by
+            pts desc
+        ) - INTERVAL 1 milliseconds,
+        to_timestamp('9999-12-31 23:59:59.999')
+    ) as end_timestamp,
+    CASE
+        WHEN (
+            row_number() over (
+                partition by symbol
+                order by
+                pts desc
+            ) = 1
+        ) THEN TRUE
+        ELSE FALSE
+    END as IS_CURRENT
+from demo_bronze.finwire_security s 
+left join demo_silver.companies c1
+on s.cik = c1.company_id
+and pts between c1.effective_timestamp and c1.end_timestamp
+left join demo_silver.companies c2
+on s.company_name = c2.name
+and pts between c2.effective_timestamp and c2.end_timestamp
+  
+24/06/20 19:25:07 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:25:12  SQL status: OK in 5.0 seconds
+19:25:13  Timing info for model.tbd_tpcdi.securities (execute): 19:25:07.383298 => 19:25:13.004407
+19:25:13  On model.tbd_tpcdi.securities: ROLLBACK
+19:25:13  Spark adapter: NotImplemented: rollback
+19:25:13  On model.tbd_tpcdi.securities: Close
+19:25:13  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a96f70>]}
+19:25:13  31 of 45 OK created sql table model demo_silver.securities ..................... [OK in 5.67s]
+19:25:13  Finished running node model.tbd_tpcdi.securities
+19:25:13  Began running node model.tbd_tpcdi.cash_transactions
+19:25:13  32 of 45 START sql table model demo_silver.cash_transactions ................... [RUN]
+19:25:13  Re-using an available connection from the pool (formerly model.tbd_tpcdi.securities, now model.tbd_tpcdi.cash_transactions)
+19:25:13  Began compiling node model.tbd_tpcdi.cash_transactions
+19:25:13  Writing injected SQL for node "model.tbd_tpcdi.cash_transactions"
+19:25:13  Timing info for model.tbd_tpcdi.cash_transactions (compile): 19:25:13.033918 => 19:25:13.045148
+19:25:13  Began executing node model.tbd_tpcdi.cash_transactions
+19:25:13  Using spark connection "model.tbd_tpcdi.cash_transactions"
+19:25:13  On model.tbd_tpcdi.cash_transactions: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.cash_transactions"} */
+drop table if exists demo_silver.cash_transactions
+19:25:13  Opening a new connection, currently in state closed
+19:25:13  SQL status: OK in 0.0 seconds
+19:25:13  Writing runtime sql for node "model.tbd_tpcdi.cash_transactions"
+19:25:13  Spark adapter: NotImplemented: add_begin_query
+19:25:13  Using spark connection "model.tbd_tpcdi.cash_transactions"
+19:25:13  On model.tbd_tpcdi.cash_transactions: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.cash_transactions"} */
+
+  
+    
+        create table demo_silver.cash_transactions
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with t as (
+    select
+        ct_ca_id account_id,
+        ct_dts transaction_timestamp,
+        ct_amt amount,
+        ct_name description
+    from
+        demo_bronze.brokerage_cash_transaction
+)
+select
+    a.customer_id,
+    t.*
+from
+    t
+join
+    demo_silver.accounts a
+on
+    t.account_id = a.account_id
+and
+    t.transaction_timestamp between a.effective_timestamp and a.end_timestamp
+  
+24/06/20 19:25:13 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:29:12  SQL status: OK in 239.0 seconds
+19:29:12  Timing info for model.tbd_tpcdi.cash_transactions (execute): 19:25:13.050272 => 19:29:12.290588
+19:29:12  On model.tbd_tpcdi.cash_transactions: ROLLBACK
+19:29:12  Spark adapter: NotImplemented: rollback
+19:29:12  On model.tbd_tpcdi.cash_transactions: Close
+19:29:12  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a96f70>]}
+19:29:12  32 of 45 OK created sql table model demo_silver.cash_transactions .............. [OK in 239.27s]
+19:29:12  Finished running node model.tbd_tpcdi.cash_transactions
+19:29:12  Began running node model.tbd_tpcdi.dim_customer
+19:29:12  33 of 45 START sql table model demo_gold.dim_customer .......................... [RUN]
+19:29:12  Re-using an available connection from the pool (formerly model.tbd_tpcdi.cash_transactions, now model.tbd_tpcdi.dim_customer)
+19:29:12  Began compiling node model.tbd_tpcdi.dim_customer
+19:29:12  Writing injected SQL for node "model.tbd_tpcdi.dim_customer"
+19:29:12  Timing info for model.tbd_tpcdi.dim_customer (compile): 19:29:12.317871 => 19:29:12.329124
+19:29:12  Began executing node model.tbd_tpcdi.dim_customer
+19:29:12  Using spark connection "model.tbd_tpcdi.dim_customer"
+19:29:12  On model.tbd_tpcdi.dim_customer: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_customer"} */
+drop table if exists demo_gold.dim_customer
+19:29:12  Opening a new connection, currently in state closed
+19:29:12  SQL status: OK in 0.0 seconds
+19:29:12  Writing runtime sql for node "model.tbd_tpcdi.dim_customer"
+19:29:12  Spark adapter: NotImplemented: add_begin_query
+19:29:12  Using spark connection "model.tbd_tpcdi.dim_customer"
+19:29:12  On model.tbd_tpcdi.dim_customer: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_customer"} */
+
+  
+    
+        create table demo_gold.dim_customer
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select c.*,
+           p.agency_id,
+           p.credit_rating,
+           p.net_worth
+    FROM demo_silver.customers c
+    left join demo_bronze.syndicated_prospect p
+    using (first_name, last_name, postal_code, address_line1, address_line2)
+),
+s2 as (
+    SELECT
+        md5(cast(concat(coalesce(cast(customer_id as string), '_dbt_utils_surrogate_key_null_'), '-', coalesce(cast(effective_timestamp as string), '_dbt_utils_surrogate_key_null_')) as string)) sk_customer_id,
+        customer_id,
+        coalesce(tax_id, last_value(tax_id) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) tax_id,
+        status,
+        coalesce(last_name, last_value(last_name) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) last_name,
+        coalesce(first_name, last_value(first_name) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) first_name,
+        coalesce(middle_name, last_value(middle_name) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) middleinitial,
+        coalesce(gender, last_value(gender) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) gender,
+        coalesce(tier, last_value(tier) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) tier,
+        coalesce(dob, last_value(dob) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) dob,
+        coalesce(address_line1, last_value(address_line1) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) address_line1,
+        coalesce(address_line2, last_value(address_line2) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) address_line2,
+        coalesce(postal_code, last_value(postal_code) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) postal_code,
+        coalesce(CITY, last_value(CITY) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) CITY,
+        coalesce(state_province, last_value(state_province) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) state_province,
+        coalesce(country, last_value(country) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) country,
+        coalesce(phone1, last_value(phone1) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) phone1,
+        coalesce(phone2, last_value(phone2) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) phone2,
+        coalesce(phone3, last_value(phone3) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) phone3,
+        coalesce(primary_email, last_value(primary_email) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) primary_email,
+        coalesce(alternate_email, last_value(alternate_email) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) alternate_email,
+        coalesce(local_tax_rate_name, last_value(local_tax_rate_name) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) local_tax_rate_name,
+        coalesce(local_tax_rate, last_value(local_tax_rate) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) local_tax_rate,
+        coalesce(national_tax_rate_name, last_value(national_tax_rate_name) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) national_tax_rate_name,
+        coalesce(national_tax_rate, last_value(national_tax_rate) IGNORE NULLS OVER (
+            PARTITION BY customer_id
+            ORDER BY effective_timestamp)) national_tax_rate,
+        agency_id,
+        credit_rating,
+        net_worth,
+        effective_timestamp,
+        end_timestamp,
+        is_current
+    FROM s1
+)
+select *
+from s2
+  
+24/06/20 19:29:12 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:29:44  SQL status: OK in 32.0 seconds
+19:29:44  Timing info for model.tbd_tpcdi.dim_customer (execute): 19:29:12.334908 => 19:29:44.259513
+19:29:44  On model.tbd_tpcdi.dim_customer: ROLLBACK
+19:29:44  Spark adapter: NotImplemented: rollback
+19:29:44  On model.tbd_tpcdi.dim_customer: Close
+19:29:44  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c5d85b0>]}
+19:29:44  33 of 45 OK created sql table model demo_gold.dim_customer ..................... [OK in 31.96s]
+19:29:44  Finished running node model.tbd_tpcdi.dim_customer
+19:29:44  Began running node model.tbd_tpcdi.dim_trade
+19:29:44  34 of 45 START sql table model demo_gold.dim_trade ............................. [RUN]
+19:29:44  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_customer, now model.tbd_tpcdi.dim_trade)
+19:29:44  Began compiling node model.tbd_tpcdi.dim_trade
+19:29:44  Writing injected SQL for node "model.tbd_tpcdi.dim_trade"
+19:29:44  Timing info for model.tbd_tpcdi.dim_trade (compile): 19:29:44.301673 => 19:29:44.317832
+19:29:44  Began executing node model.tbd_tpcdi.dim_trade
+19:29:44  Using spark connection "model.tbd_tpcdi.dim_trade"
+19:29:44  On model.tbd_tpcdi.dim_trade: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_trade"} */
+drop table if exists demo_gold.dim_trade
+19:29:44  Opening a new connection, currently in state closed
+19:29:44  SQL status: OK in 0.0 seconds
+19:29:44  Writing runtime sql for node "model.tbd_tpcdi.dim_trade"
+19:29:44  Spark adapter: NotImplemented: add_begin_query
+19:29:44  Using spark connection "model.tbd_tpcdi.dim_trade"
+19:29:44  On model.tbd_tpcdi.dim_trade: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_trade"} */
+
+  
+    
+        create table demo_gold.dim_trade
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select 
+    md5(cast(concat(coalesce(cast(trade_id as string), '_dbt_utils_surrogate_key_null_'), '-', coalesce(cast(t.effective_timestamp as string), '_dbt_utils_surrogate_key_null_')) as string)) sk_trade_id,
+    trade_id,
+    trade_status status,
+    transaction_type,
+    trade_type type,
+    executor_name executed_by,
+    t.effective_timestamp,
+    t.end_timestamp,
+    t.IS_CURRENT
+from
+    demo_silver.trades_history t
+  
+24/06/20 19:29:44 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:42:27  SQL status: OK in 763.0 seconds
+19:42:27  Timing info for model.tbd_tpcdi.dim_trade (execute): 19:29:44.326700 => 19:42:27.151727
+19:42:27  On model.tbd_tpcdi.dim_trade: ROLLBACK
+19:42:27  Spark adapter: NotImplemented: rollback
+19:42:27  On model.tbd_tpcdi.dim_trade: Close
+19:42:27  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c5d85b0>]}
+19:42:27  34 of 45 OK created sql table model demo_gold.dim_trade ........................ [OK in 762.87s]
+19:42:27  Finished running node model.tbd_tpcdi.dim_trade
+19:42:27  Began running node model.tbd_tpcdi.trades
+19:42:27  35 of 45 START sql table model demo_silver.trades .............................. [RUN]
+19:42:27  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_trade, now model.tbd_tpcdi.trades)
+19:42:27  Began compiling node model.tbd_tpcdi.trades
+19:42:27  Writing injected SQL for node "model.tbd_tpcdi.trades"
+19:42:27  Timing info for model.tbd_tpcdi.trades (compile): 19:42:27.179772 => 19:42:27.187744
+19:42:27  Began executing node model.tbd_tpcdi.trades
+19:42:27  Using spark connection "model.tbd_tpcdi.trades"
+19:42:27  On model.tbd_tpcdi.trades: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.trades"} */
+drop table if exists demo_silver.trades
+19:42:27  Opening a new connection, currently in state closed
+19:42:27  SQL status: OK in 0.0 seconds
+19:42:27  Writing runtime sql for node "model.tbd_tpcdi.trades"
+19:42:27  Spark adapter: NotImplemented: add_begin_query
+19:42:27  Using spark connection "model.tbd_tpcdi.trades"
+19:42:27  On model.tbd_tpcdi.trades: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.trades"} */
+
+  
+    
+        create table demo_silver.trades
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select distinct
+        trade_id,
+        account_id,
+        trade_status,
+        trade_type,
+        transaction_type,
+        symbol,
+        executor_name,
+        quantity,
+        bid_price,
+        trade_price,
+        fee,
+        commission,
+        tax,
+        min(effective_timestamp) over (partition by trade_id) create_timestamp,
+        max(effective_timestamp) over (partition by trade_id) close_timestamp
+    from
+        demo_silver.trades_history
+    order by trade_id, create_timestamp
+)
+select *
+from s1
+  
+24/06/20 19:42:27 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:55:13  SQL status: OK in 766.0 seconds
+19:55:13  Timing info for model.tbd_tpcdi.trades (execute): 19:42:27.193202 => 19:55:13.500916
+19:55:13  On model.tbd_tpcdi.trades: ROLLBACK
+19:55:13  Spark adapter: NotImplemented: rollback
+19:55:13  On model.tbd_tpcdi.trades: Close
+19:55:13  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac8b640>]}
+19:55:13  35 of 45 OK created sql table model demo_silver.trades ......................... [OK in 766.34s]
+19:55:13  Finished running node model.tbd_tpcdi.trades
+19:55:13  Began running node model.tbd_tpcdi.wrk_company_financials
+19:55:13  Re-using an available connection from the pool (formerly model.tbd_tpcdi.trades, now model.tbd_tpcdi.wrk_company_financials)
+19:55:13  Began compiling node model.tbd_tpcdi.wrk_company_financials
+19:55:13  Writing injected SQL for node "model.tbd_tpcdi.wrk_company_financials"
+19:55:13  Timing info for model.tbd_tpcdi.wrk_company_financials (compile): 19:55:13.528652 => 19:55:13.536359
+19:55:13  Finished running node model.tbd_tpcdi.wrk_company_financials
+19:55:13  Began running node model.tbd_tpcdi.dim_security
+19:55:13  36 of 45 START sql table model demo_gold.dim_security .......................... [RUN]
+19:55:13  Re-using an available connection from the pool (formerly model.tbd_tpcdi.wrk_company_financials, now model.tbd_tpcdi.dim_security)
+19:55:13  Began compiling node model.tbd_tpcdi.dim_security
+19:55:13  Writing injected SQL for node "model.tbd_tpcdi.dim_security"
+19:55:13  Timing info for model.tbd_tpcdi.dim_security (compile): 19:55:13.548945 => 19:55:13.561386
+19:55:13  Began executing node model.tbd_tpcdi.dim_security
+19:55:13  Using spark connection "model.tbd_tpcdi.dim_security"
+19:55:13  On model.tbd_tpcdi.dim_security: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_security"} */
+drop table if exists demo_gold.dim_security
+19:55:13  Opening a new connection, currently in state closed
+19:55:13  SQL status: OK in 0.0 seconds
+19:55:13  Writing runtime sql for node "model.tbd_tpcdi.dim_security"
+19:55:13  Spark adapter: NotImplemented: add_begin_query
+19:55:13  Using spark connection "model.tbd_tpcdi.dim_security"
+19:55:13  On model.tbd_tpcdi.dim_security: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_security"} */
+
+  
+    
+        create table demo_gold.dim_security
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select
+        symbol,
+        issue_type issue,
+        s.status,
+        s.name,
+        exchange_id,
+        sk_company_id,
+        shares_outstanding,
+        first_trade_date,
+        first_exchange_date,
+        dividend,
+        s.effective_timestamp,
+        s.end_timestamp,
+        s.IS_CURRENT
+    from
+        demo_silver.securities s
+    join
+        demo_gold.dim_company c
+    on 
+        s.company_id = c.company_id
+    and
+        s.effective_timestamp between c.effective_timestamp and c.end_timestamp
+)
+select
+    md5(cast(concat(coalesce(cast(symbol as string), '_dbt_utils_surrogate_key_null_'), '-', coalesce(cast(effective_timestamp as string), '_dbt_utils_surrogate_key_null_')) as string)) sk_security_id,
+    *
+from
+    s1
+  
+24/06/20 19:55:13 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+19:55:18  SQL status: OK in 4.0 seconds
+19:55:18  Timing info for model.tbd_tpcdi.dim_security (execute): 19:55:13.563801 => 19:55:18.058384
+19:55:18  On model.tbd_tpcdi.dim_security: ROLLBACK
+19:55:18  Spark adapter: NotImplemented: rollback
+19:55:18  On model.tbd_tpcdi.dim_security: Close
+19:55:18  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b38400>]}
+19:55:18  36 of 45 OK created sql table model demo_gold.dim_security ..................... [OK in 4.52s]
+19:55:18  Finished running node model.tbd_tpcdi.dim_security
+19:55:18  Began running node model.tbd_tpcdi.watches_history
+19:55:18  37 of 45 START sql table model demo_silver.watches_history ..................... [RUN]
+19:55:18  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_security, now model.tbd_tpcdi.watches_history)
+19:55:18  Began compiling node model.tbd_tpcdi.watches_history
+19:55:18  Writing injected SQL for node "model.tbd_tpcdi.watches_history"
+19:55:18  Timing info for model.tbd_tpcdi.watches_history (compile): 19:55:18.080937 => 19:55:18.091065
+19:55:18  Began executing node model.tbd_tpcdi.watches_history
+19:55:18  Using spark connection "model.tbd_tpcdi.watches_history"
+19:55:18  On model.tbd_tpcdi.watches_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.watches_history"} */
+drop table if exists demo_silver.watches_history
+19:55:18  Opening a new connection, currently in state closed
+19:55:18  SQL status: OK in 0.0 seconds
+19:55:18  Writing runtime sql for node "model.tbd_tpcdi.watches_history"
+19:55:18  Spark adapter: NotImplemented: add_begin_query
+19:55:18  Using spark connection "model.tbd_tpcdi.watches_history"
+19:55:18  On model.tbd_tpcdi.watches_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.watches_history"} */
+
+  
+    
+        create table demo_silver.watches_history
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select
+        w_c_id customer_id,
+        w_s_symb symbol,
+        w_dts watch_timestamp,
+        case w_action
+        when 'ACTV' then 'Activate'
+        when 'CNCL' then 'Cancelled'
+        else null end action_type
+    from
+        demo_bronze.brokerage_watch_history
+)
+select 
+    s1.*,
+    company_id,
+    company_name,
+    exchange_id,
+    status security_status
+from 
+    s1
+join
+    demo_silver.securities s
+using (symbol)
+  
+24/06/20 19:55:18 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+20:00:16  SQL status: OK in 298.0 seconds
+20:00:16  Timing info for model.tbd_tpcdi.watches_history (execute): 19:55:18.094260 => 20:00:16.746824
+20:00:16  On model.tbd_tpcdi.watches_history: ROLLBACK
+20:00:16  Spark adapter: NotImplemented: rollback
+20:00:16  On model.tbd_tpcdi.watches_history: Close
+20:00:16  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b378e0>]}
+20:00:16  37 of 45 OK created sql table model demo_silver.watches_history ................ [OK in 298.68s]
+20:00:16  Finished running node model.tbd_tpcdi.watches_history
+20:00:16  Began running node model.tbd_tpcdi.dim_account
+20:00:16  38 of 45 START sql table model demo_gold.dim_account ........................... [RUN]
+20:00:16  Re-using an available connection from the pool (formerly model.tbd_tpcdi.watches_history, now model.tbd_tpcdi.dim_account)
+20:00:16  Began compiling node model.tbd_tpcdi.dim_account
+20:00:16  Writing injected SQL for node "model.tbd_tpcdi.dim_account"
+20:00:16  Timing info for model.tbd_tpcdi.dim_account (compile): 20:00:16.763682 => 20:00:16.782312
+20:00:16  Began executing node model.tbd_tpcdi.dim_account
+20:00:16  Using spark connection "model.tbd_tpcdi.dim_account"
+20:00:16  On model.tbd_tpcdi.dim_account: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_account"} */
+drop table if exists demo_gold.dim_account
+20:00:16  Opening a new connection, currently in state closed
+20:00:17  SQL status: OK in 0.0 seconds
+20:00:17  Writing runtime sql for node "model.tbd_tpcdi.dim_account"
+20:00:17  Spark adapter: NotImplemented: add_begin_query
+20:00:17  Using spark connection "model.tbd_tpcdi.dim_account"
+20:00:17  On model.tbd_tpcdi.dim_account: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.dim_account"} */
+
+  
+    
+        create table demo_gold.dim_account
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      SELECT
+    md5(cast(concat(coalesce(cast(account_id as string), '_dbt_utils_surrogate_key_null_'), '-', coalesce(cast(a.effective_timestamp as string), '_dbt_utils_surrogate_key_null_')) as string)) sk_account_id,
+    a.account_id,
+    sk_broker_id,
+    sk_customer_id,
+    a.status,
+    account_desc,
+    tax_status,
+    a.effective_timestamp,
+    a.end_timestamp,
+    a.is_current
+from
+    demo_silver.accounts a
+join
+    demo_gold.dim_customer c
+on a.customer_id = c.customer_id
+and a.effective_timestamp between c.effective_timestamp and c.end_timestamp
+join
+    demo_gold.dim_broker b 
+using (broker_id)
+  
+24/06/20 20:00:17 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+20:01:05  SQL status: OK in 49.0 seconds
+20:01:05  Timing info for model.tbd_tpcdi.dim_account (execute): 20:00:16.784871 => 20:01:05.769877
+20:01:05  On model.tbd_tpcdi.dim_account: ROLLBACK
+20:01:05  Spark adapter: NotImplemented: rollback
+20:01:05  On model.tbd_tpcdi.dim_account: Close
+20:01:05  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17ac0c9a0>]}
+20:01:05  38 of 45 OK created sql table model demo_gold.dim_account ...................... [OK in 49.02s]
+20:01:05  Finished running node model.tbd_tpcdi.dim_account
+20:01:05  Began running node model.tbd_tpcdi.holdings_history
+20:01:05  39 of 45 START sql table model demo_silver.holdings_history .................... [RUN]
+20:01:05  Re-using an available connection from the pool (formerly model.tbd_tpcdi.dim_account, now model.tbd_tpcdi.holdings_history)
+20:01:05  Began compiling node model.tbd_tpcdi.holdings_history
+20:01:05  Writing injected SQL for node "model.tbd_tpcdi.holdings_history"
+20:01:05  Timing info for model.tbd_tpcdi.holdings_history (compile): 20:01:05.796707 => 20:01:05.805393
+20:01:05  Began executing node model.tbd_tpcdi.holdings_history
+20:01:05  Using spark connection "model.tbd_tpcdi.holdings_history"
+20:01:05  On model.tbd_tpcdi.holdings_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.holdings_history"} */
+drop table if exists demo_silver.holdings_history
+20:01:05  Opening a new connection, currently in state closed
+20:01:06  SQL status: OK in 0.0 seconds
+20:01:06  Writing runtime sql for node "model.tbd_tpcdi.holdings_history"
+20:01:06  Spark adapter: NotImplemented: add_begin_query
+20:01:06  Using spark connection "model.tbd_tpcdi.holdings_history"
+20:01:06  On model.tbd_tpcdi.holdings_history: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.holdings_history"} */
+
+  
+    
+        create table demo_silver.holdings_history
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select
+        HH_T_ID trade_id,
+        HH_H_T_ID previous_trade_id,
+        hh_before_qty previous_quantity,
+        hh_after_qty quantity
+    from demo_bronze.brokerage_holding_history
+)
+select s1.*,
+       ct.account_id account_id,
+       ct.symbol symbol,
+       ct.create_timestamp,
+       ct.close_timestamp,
+       ct.trade_price,
+       ct.bid_price,
+       ct.fee,
+       ct.commission
+from s1
+join demo_silver.trades ct
+using (trade_id)
+  
+24/06/20 20:01:06 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+20:09:55  SQL status: OK in 529.0 seconds
+20:09:55  Timing info for model.tbd_tpcdi.holdings_history (execute): 20:01:05.808199 => 20:09:55.452029
+20:09:55  On model.tbd_tpcdi.holdings_history: ROLLBACK
+20:09:55  Spark adapter: NotImplemented: rollback
+20:09:55  On model.tbd_tpcdi.holdings_history: Close
+20:09:55  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179abfe50>]}
+20:09:55  39 of 45 OK created sql table model demo_silver.holdings_history ............... [OK in 529.67s]
+20:09:55  Finished running node model.tbd_tpcdi.holdings_history
+20:09:55  Began running node model.tbd_tpcdi.watches
+20:09:55  40 of 45 START sql table model demo_silver.watches ............................. [RUN]
+20:09:55  Re-using an available connection from the pool (formerly model.tbd_tpcdi.holdings_history, now model.tbd_tpcdi.watches)
+20:09:55  Began compiling node model.tbd_tpcdi.watches
+20:09:55  Writing injected SQL for node "model.tbd_tpcdi.watches"
+20:09:55  Timing info for model.tbd_tpcdi.watches (compile): 20:09:55.491199 => 20:09:55.503480
+20:09:55  Began executing node model.tbd_tpcdi.watches
+20:09:55  Using spark connection "model.tbd_tpcdi.watches"
+20:09:55  On model.tbd_tpcdi.watches: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.watches"} */
+drop table if exists demo_silver.watches
+20:09:55  Opening a new connection, currently in state closed
+20:09:55  SQL status: OK in 0.0 seconds
+20:09:55  Writing runtime sql for node "model.tbd_tpcdi.watches"
+20:09:55  Spark adapter: NotImplemented: add_begin_query
+20:09:55  Using spark connection "model.tbd_tpcdi.watches"
+20:09:55  On model.tbd_tpcdi.watches: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.watches"} */
+
+  
+    
+        create table demo_silver.watches
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select
+        customer_id,
+        symbol,
+        watch_timestamp,
+        action_type,
+        company_id,
+        company_name,
+        exchange_id,
+        security_status,
+        case action_type
+            when 'Activate' then watch_timestamp 
+            else null 
+        end placed_timestamp,
+        case action_type
+            when 'Cancelled' then watch_timestamp 
+            else null 
+        end removed_timestamp
+    from
+        demo_silver.watches_history
+),
+s2 as (
+    select
+        customer_id,
+        symbol,
+        company_id,
+        company_name,
+        exchange_id,
+        security_status,
+        min(placed_timestamp) placed_timestamp, 
+        max(removed_timestamp) removed_timestamp
+    from s1
+    group by customer_id, symbol, company_id, company_name, exchange_id, security_status
+)
+select 
+    *,
+    case
+        when removed_timestamp is null then 'Active'
+        else 'Inactive'
+    end watch_status
+from s2
+  
+24/06/20 20:09:55 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+20:17:48  SQL status: OK in 473.0 seconds
+20:17:48  Timing info for model.tbd_tpcdi.watches (execute): 20:09:55.512614 => 20:17:48.303416
+20:17:48  On model.tbd_tpcdi.watches: ROLLBACK
+20:17:48  Spark adapter: NotImplemented: rollback
+20:17:48  On model.tbd_tpcdi.watches: Close
+20:17:48  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a338b0>]}
+20:17:48  40 of 45 OK created sql table model demo_silver.watches ........................ [OK in 472.84s]
+20:17:48  Finished running node model.tbd_tpcdi.watches
+20:17:48  Began running node model.tbd_tpcdi.fact_cash_transactions
+20:17:48  41 of 45 START sql table model demo_gold.fact_cash_transactions ................ [RUN]
+20:17:48  Re-using an available connection from the pool (formerly model.tbd_tpcdi.watches, now model.tbd_tpcdi.fact_cash_transactions)
+20:17:48  Began compiling node model.tbd_tpcdi.fact_cash_transactions
+20:17:48  Writing injected SQL for node "model.tbd_tpcdi.fact_cash_transactions"
+20:17:48  Timing info for model.tbd_tpcdi.fact_cash_transactions (compile): 20:17:48.343967 => 20:17:48.351998
+20:17:48  Began executing node model.tbd_tpcdi.fact_cash_transactions
+20:17:48  Using spark connection "model.tbd_tpcdi.fact_cash_transactions"
+20:17:48  On model.tbd_tpcdi.fact_cash_transactions: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_cash_transactions"} */
+drop table if exists demo_gold.fact_cash_transactions
+20:17:48  Opening a new connection, currently in state closed
+20:17:48  SQL status: OK in 0.0 seconds
+20:17:48  Writing runtime sql for node "model.tbd_tpcdi.fact_cash_transactions"
+20:17:48  Spark adapter: NotImplemented: add_begin_query
+20:17:48  Using spark connection "model.tbd_tpcdi.fact_cash_transactions"
+20:17:48  On model.tbd_tpcdi.fact_cash_transactions: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_cash_transactions"} */
+
+  
+    
+        create table demo_gold.fact_cash_transactions
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select
+        *,
+        to_date(transaction_timestamp) sk_transaction_date
+    from
+        demo_silver.cash_transactions
+)
+select
+    sk_customer_id,
+    sk_account_id,
+    sk_transaction_date,
+    transaction_timestamp,
+    amount,
+    description
+from
+    s1
+join
+    demo_gold.dim_account a
+on
+    s1.account_id = a.account_id
+and
+    s1.transaction_timestamp between a.effective_timestamp and a.end_timestamp
+  
+24/06/20 20:17:48 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+20:23:46  SQL status: OK in 358.0 seconds
+20:23:46  Timing info for model.tbd_tpcdi.fact_cash_transactions (execute): 20:17:48.357246 => 20:23:46.702034
+20:23:46  On model.tbd_tpcdi.fact_cash_transactions: ROLLBACK
+20:23:46  Spark adapter: NotImplemented: rollback
+20:23:46  On model.tbd_tpcdi.fact_cash_transactions: Close
+20:23:46  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179abfe50>]}
+20:23:46  41 of 45 OK created sql table model demo_gold.fact_cash_transactions ........... [OK in 358.37s]
+20:23:46  Finished running node model.tbd_tpcdi.fact_cash_transactions
+20:23:46  Began running node model.tbd_tpcdi.fact_trade
+20:23:46  42 of 45 START sql table model demo_gold.fact_trade ............................ [RUN]
+20:23:46  Re-using an available connection from the pool (formerly model.tbd_tpcdi.fact_cash_transactions, now model.tbd_tpcdi.fact_trade)
+20:23:46  Began compiling node model.tbd_tpcdi.fact_trade
+20:23:46  Writing injected SQL for node "model.tbd_tpcdi.fact_trade"
+20:23:46  Timing info for model.tbd_tpcdi.fact_trade (compile): 20:23:46.728376 => 20:23:46.740461
+20:23:46  Began executing node model.tbd_tpcdi.fact_trade
+20:23:46  Using spark connection "model.tbd_tpcdi.fact_trade"
+20:23:46  On model.tbd_tpcdi.fact_trade: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_trade"} */
+drop table if exists demo_gold.fact_trade
+20:23:46  Opening a new connection, currently in state closed
+20:23:46  SQL status: OK in 0.0 seconds
+20:23:46  Writing runtime sql for node "model.tbd_tpcdi.fact_trade"
+20:23:46  Spark adapter: NotImplemented: add_begin_query
+20:23:46  Using spark connection "model.tbd_tpcdi.fact_trade"
+20:23:46  On model.tbd_tpcdi.fact_trade: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_trade"} */
+
+  
+    
+        create table demo_gold.fact_trade
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    sk_trade_id,
+    sk_broker_id,
+    sk_customer_id,
+    sk_account_id,
+    sk_security_id,
+    to_date(create_timestamp) sk_create_date,
+    create_timestamp,
+    to_date(close_timestamp) sk_close_date,
+    close_timestamp,
+    executed_by,
+    quantity,
+    bid_price,
+    trade_price,
+    fee,
+    commission,
+    tax
+from demo_silver.trades t
+join demo_gold.dim_trade dt
+on t.trade_id = dt.trade_id
+and t.create_timestamp between dt.effective_timestamp and dt.end_timestamp
+join
+    demo_gold.dim_account a
+on 
+    t.account_id = a.account_id
+and
+    t.create_timestamp between a.effective_timestamp and a.end_timestamp
+join
+    demo_gold.dim_security s
+on
+    t.symbol = s.symbol
+and
+    t.create_timestamp between s.effective_timestamp and s.end_timestamp
+  
+24/06/20 20:23:47 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+20:38:21  SQL status: OK in 875.0 seconds
+20:38:21  Timing info for model.tbd_tpcdi.fact_trade (execute): 20:23:46.745885 => 20:38:21.688922
+20:38:21  On model.tbd_tpcdi.fact_trade: ROLLBACK
+20:38:21  Spark adapter: NotImplemented: rollback
+20:38:21  On model.tbd_tpcdi.fact_trade: Close
+20:38:21  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a87130>]}
+20:38:21  42 of 45 OK created sql table model demo_gold.fact_trade ....................... [OK in 874.98s]
+20:38:21  Finished running node model.tbd_tpcdi.fact_trade
+20:38:21  Began running node model.tbd_tpcdi.fact_holdings
+20:38:21  43 of 45 START sql table model demo_gold.fact_holdings ......................... [RUN]
+20:38:21  Re-using an available connection from the pool (formerly model.tbd_tpcdi.fact_trade, now model.tbd_tpcdi.fact_holdings)
+20:38:21  Began compiling node model.tbd_tpcdi.fact_holdings
+20:38:21  Writing injected SQL for node "model.tbd_tpcdi.fact_holdings"
+20:38:21  Timing info for model.tbd_tpcdi.fact_holdings (compile): 20:38:21.718984 => 20:38:21.732683
+20:38:21  Began executing node model.tbd_tpcdi.fact_holdings
+20:38:21  Using spark connection "model.tbd_tpcdi.fact_holdings"
+20:38:21  On model.tbd_tpcdi.fact_holdings: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_holdings"} */
+drop table if exists demo_gold.fact_holdings
+20:38:21  Opening a new connection, currently in state closed
+20:38:21  SQL status: OK in 0.0 seconds
+20:38:21  Writing runtime sql for node "model.tbd_tpcdi.fact_holdings"
+20:38:21  Spark adapter: NotImplemented: add_begin_query
+20:38:21  Using spark connection "model.tbd_tpcdi.fact_holdings"
+20:38:21  On model.tbd_tpcdi.fact_holdings: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_holdings"} */
+
+  
+    
+        create table demo_gold.fact_holdings
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select 
+        *
+    from demo_silver.holdings_history
+)
+select
+    ct.sk_trade_id sk_current_trade_id,
+    pt.sk_trade_id,
+    sk_customer_id,
+    sk_account_id,
+    sk_security_id,
+    to_date(create_timestamp) sk_trade_date,
+    create_timestamp trade_timestamp,
+    trade_price current_price,
+    quantity current_holding,
+    bid_price current_bid_price,
+    fee current_fee,
+    commission current_commission
+from s1
+join demo_gold.dim_trade ct
+using (trade_id)
+join demo_gold.dim_trade pt 
+on s1.previous_trade_id = pt.trade_id
+join demo_gold.dim_account a 
+on s1.account_id = a.account_id 
+and s1.create_timestamp between a.effective_timestamp and a.end_timestamp
+join demo_gold.dim_security s 
+on s1.symbol = s.symbol
+  
+24/06/20 20:38:22 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+21:03:59  SQL status: OK in 1537.0 seconds
+21:03:59  Timing info for model.tbd_tpcdi.fact_holdings (execute): 20:38:21.737849 => 21:03:59.034030
+21:03:59  On model.tbd_tpcdi.fact_holdings: ROLLBACK
+21:03:59  Spark adapter: NotImplemented: rollback
+21:03:59  On model.tbd_tpcdi.fact_holdings: Close
+21:03:59  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179b378e0>]}
+21:03:59  43 of 45 OK created sql table model demo_gold.fact_holdings .................... [OK in 1537.33s]
+21:03:59  Finished running node model.tbd_tpcdi.fact_holdings
+21:03:59  Began running node model.tbd_tpcdi.fact_watches
+21:03:59  44 of 45 START sql table model demo_gold.fact_watches .......................... [RUN]
+21:03:59  Re-using an available connection from the pool (formerly model.tbd_tpcdi.fact_holdings, now model.tbd_tpcdi.fact_watches)
+21:03:59  Began compiling node model.tbd_tpcdi.fact_watches
+21:03:59  Writing injected SQL for node "model.tbd_tpcdi.fact_watches"
+21:03:59  Timing info for model.tbd_tpcdi.fact_watches (compile): 21:03:59.070044 => 21:03:59.080947
+21:03:59  Began executing node model.tbd_tpcdi.fact_watches
+21:03:59  Using spark connection "model.tbd_tpcdi.fact_watches"
+21:03:59  On model.tbd_tpcdi.fact_watches: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_watches"} */
+drop table if exists demo_gold.fact_watches
+21:03:59  Opening a new connection, currently in state closed
+21:03:59  SQL status: OK in 0.0 seconds
+21:03:59  Writing runtime sql for node "model.tbd_tpcdi.fact_watches"
+21:03:59  Spark adapter: NotImplemented: add_begin_query
+21:03:59  Using spark connection "model.tbd_tpcdi.fact_watches"
+21:03:59  On model.tbd_tpcdi.fact_watches: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_watches"} */
+
+  
+    
+        create table demo_gold.fact_watches
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      select
+    sk_customer_id,
+    sk_security_id,
+    to_date(placed_timestamp) sk_date_placed,
+    to_date(removed_timestamp) sk_date_removed,
+    1 as watch_cnt
+from 
+    demo_silver.watches w
+join
+    demo_gold.dim_customer c
+ON
+    w.customer_id = c.customer_id
+and
+    placed_timestamp between c.effective_timestamp and c.end_timestamp
+join
+    demo_gold.dim_security s
+ON
+    w.symbol = s.symbol
+and
+    placed_timestamp between s.effective_timestamp and s.end_timestamp
+  
+24/06/20 21:03:59 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+21:12:56  SQL status: OK in 538.0 seconds
+21:12:56  Timing info for model.tbd_tpcdi.fact_watches (execute): 21:03:59.084498 => 21:12:56.929505
+21:12:56  On model.tbd_tpcdi.fact_watches: ROLLBACK
+21:12:56  Spark adapter: NotImplemented: rollback
+21:12:56  On model.tbd_tpcdi.fact_watches: Close
+21:12:56  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179a87130>]}
+21:12:56  44 of 45 OK created sql table model demo_gold.fact_watches ..................... [OK in 537.88s]
+21:12:56  Finished running node model.tbd_tpcdi.fact_watches
+21:12:56  Began running node model.tbd_tpcdi.fact_cash_balances
+21:12:56  45 of 45 START sql table model demo_gold.fact_cash_balances .................... [RUN]
+21:12:56  Re-using an available connection from the pool (formerly model.tbd_tpcdi.fact_watches, now model.tbd_tpcdi.fact_cash_balances)
+21:12:56  Began compiling node model.tbd_tpcdi.fact_cash_balances
+21:12:56  Writing injected SQL for node "model.tbd_tpcdi.fact_cash_balances"
+21:12:56  Timing info for model.tbd_tpcdi.fact_cash_balances (compile): 21:12:56.948537 => 21:12:56.962166
+21:12:56  Began executing node model.tbd_tpcdi.fact_cash_balances
+21:12:56  Using spark connection "model.tbd_tpcdi.fact_cash_balances"
+21:12:56  On model.tbd_tpcdi.fact_cash_balances: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_cash_balances"} */
+drop table if exists demo_gold.fact_cash_balances
+21:12:56  Opening a new connection, currently in state closed
+21:12:57  SQL status: OK in 0.0 seconds
+21:12:57  Writing runtime sql for node "model.tbd_tpcdi.fact_cash_balances"
+21:12:57  Spark adapter: NotImplemented: add_begin_query
+21:12:57  Using spark connection "model.tbd_tpcdi.fact_cash_balances"
+21:12:57  On model.tbd_tpcdi.fact_cash_balances: /* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.fact_cash_balances"} */
+
+  
+    
+        create table demo_gold.fact_cash_balances
+      
+      
+      
+      
+      
+      
+      
+      
+
+      as
+      with s1 as (
+    select *
+    from demo_gold.fact_cash_transactions
+)
+select 
+    sk_customer_id,
+    sk_account_id,
+    sk_transaction_date,
+    sum(amount) amount,
+    description
+from s1
+group by sk_customer_id, sk_account_id, sk_transaction_date, description
+order by sk_transaction_date, sk_customer_id, sk_account_id
+  
+24/06/20 21:12:57 WARN ResolveSessionCatalog: A Hive serde table will be created as there is no table provider specified. You can set spark.sql.legacy.createHiveTableByDefault to false so that native data source table will be created instead.
+21:17:09  SQL status: OK in 253.0 seconds
+21:17:09  Timing info for model.tbd_tpcdi.fact_cash_balances (execute): 21:12:56.965565 => 21:17:09.904886
+21:17:09  On model.tbd_tpcdi.fact_cash_balances: ROLLBACK
+21:17:09  Spark adapter: NotImplemented: rollback
+21:17:09  On model.tbd_tpcdi.fact_cash_balances: Close
+21:17:09  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'add01b10-29df-45bb-a6a4-91c251a7144d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb179956b80>]}
+21:17:09  45 of 45 OK created sql table model demo_gold.fact_cash_balances ............... [OK in 252.97s]
+21:17:09  Finished running node model.tbd_tpcdi.fact_cash_balances
+21:17:09  On master: ROLLBACK
+21:17:09  Opening a new connection, currently in state init
+21:17:09  Spark adapter: NotImplemented: rollback
+21:17:09  Spark adapter: NotImplemented: add_begin_query
+21:17:09  Spark adapter: NotImplemented: commit
+21:17:09  On master: ROLLBACK
+21:17:09  Spark adapter: NotImplemented: rollback
+21:17:09  On master: Close
+21:17:09  Connection 'master' was properly closed.
+21:17:09  Connection 'list_schemas' was properly closed.
+21:17:09  Connection 'model.tbd_tpcdi.fact_cash_balances' was properly closed.
+21:17:09  
+21:17:09  Finished running 45 table models in 3 hours 0 minutes and 43.75 seconds (10843.75s).
+21:17:09  Command end result
+21:17:10  
+21:17:10  Completed with 2 errors and 0 warnings:
+21:17:10  
+21:17:10    
+Possibly unquoted identifier brokerage_cash_transaction-checkpoint detected. Please consider quoting it with back-quotes as `brokerage_cash_transaction-checkpoint`(line 2, pos 59)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.brokerage_cash_transaction-checkpoint"} */
+drop table if exists demo_bronze.brokerage_cash_transaction-checkpoint
+-----------------------------------------------------------^^^
+
+21:17:10  
+21:17:10    
+Possibly unquoted identifier daily_market-checkpoint detected. Please consider quoting it with back-quotes as `daily_market-checkpoint`(line 2, pos 45)
+
+== SQL ==
+/* {"app": "dbt", "dbt_version": "1.7.13", "profile_name": "tbd_tpcdi", "target_name": "dev", "node_id": "model.tbd_tpcdi.daily_market-checkpoint"} */
+drop table if exists demo_silver.daily_market-checkpoint
+---------------------------------------------^^^
+
+21:17:10  
+21:17:10  Done. PASS=43 WARN=0 ERROR=2 SKIP=0 TOTAL=45
+21:17:10  Resource report: {"command_name": "run", "command_wall_clock_time": 10844.803, "process_user_time": 9.900198, "process_kernel_time": 0.892888, "process_mem_max_rss": "130064", "process_out_blocks": "6400", "command_success": false, "process_in_blocks": "0"}
+21:17:10  Command `dbt run` failed at 21:17:10.039337 after 10844.81 seconds
+21:17:10  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1843be550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c8b8040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb17c67a9d0>]}
+21:17:10  Flushing usage events
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-193' coro=<ScriptMagics.shebang.<locals>._handle_stream() done, defined at /usr/local/lib/python3.8/dist-packages/IPython/core/magics/script.py:211> exception=ValueError('Separator is not found, and chunk exceed the limit')>
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/asyncio/streams.py", line 540, in readline
+    line = await self.readuntil(sep)
+  File "/usr/lib/python3.8/asyncio/streams.py", line 618, in readuntil
+    raise exceptions.LimitOverrunError(
+asyncio.exceptions.LimitOverrunError: Separator is not found, and chunk exceed the limit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/magics/script.py", line 213, in _handle_stream
+    line = (await stream.readline()).decode("utf8", errors="replace")
+  File "/usr/lib/python3.8/asyncio/streams.py", line 549, in readline
+    raise ValueError(e.args[0])
+ValueError: Separator is not found, and chunk exceed the limit
+---------------------------------------------------------------------------
+CalledProcessError                        Traceback (most recent call last)
+Cell In[96], line 1
+----> 1 get_ipython().run_cell_magic('bash', '', 'cd $REPO_ROOT\ndbt deps\ndbt run -d\n')
+
+File /usr/local/lib/python3.8/dist-packages/IPython/core/interactiveshell.py:2478, in InteractiveShell.run_cell_magic(self, magic_name, line, cell)
+   2476 with self.builtin_trap:
+   2477     args = (magic_arg_s, cell)
+-> 2478     result = fn(*args, **kwargs)
+   2480 # The code below prevents the output from being displayed
+   2481 # when using magics with decodator @output_can_be_silenced
+   2482 # when the last Python token in the expression is a ';'.
+   2483 if getattr(fn, magic.MAGIC_OUTPUT_CAN_BE_SILENCED, False):
+
+File /usr/local/lib/python3.8/dist-packages/IPython/core/magics/script.py:153, in ScriptMagics._make_script_magic.<locals>.named_script_magic(line, cell)
+    151 else:
+    152     line = script
+--> 153 return self.shebang(line, cell)
+
+File /usr/local/lib/python3.8/dist-packages/IPython/core/magics/script.py:305, in ScriptMagics.shebang(self, line, cell)
+    300 if args.raise_error and p.returncode != 0:
+    301     # If we get here and p.returncode is still None, we must have
+    302     # killed it but not yet seen its return code. We don't wait for it,
+    303     # in case it's stuck in uninterruptible sleep. -9 = SIGKILL
+    304     rc = p.returncode or -9
+--> 305     raise CalledProcessError(rc, cell)
+
+CalledProcessError: Command 'b'cd $REPO_ROOT\ndbt deps\ndbt run -d\n'' returned non-zero exit status 1.
+
+
+
+
+
+
