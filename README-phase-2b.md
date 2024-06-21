@@ -93,4 +93,8 @@ Poniższa tabela zawiera zagregowane dane o czasach wykonania dla każdej z wars
 | TOTAL               | 10801,89 | 3756,01  | 4364,14  |
 
 
+Na poniższym wykresie przedstawiono dane o czasie wykonania każdego z modelu z podziałem na liczbę egzekutorów - 1 (niebieski), 2 (pomarańczowy) lub 4 (zielony).
+
+![img_png](doc/figures/time_exec_comparison.png)
+
    
