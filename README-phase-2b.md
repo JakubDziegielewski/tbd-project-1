@@ -97,4 +97,16 @@ Na poniższym wykresie przedstawiono dane o czasie wykonania każdego z modelu z
 
 ![img_png](doc/figures/time_exec_comparison.png)
 
-   
+Patrząc na dane przedstawione w tabelach oraz na wykresie powyżej można zauważyć kilka rzeczy:
+
+a) Sumarycznie najkrótszy czas całkowitego przetwarzania miał miejsce w przypadku, gdy uruchomiono tylko 2 instacje egzekutora - łącznie ok 1 godz 2 min. Nieznacznie więcej trwało to w przypadku 4 egzekutorów - 1 godz 12 min. Zauważalnie dłużej zajęło przetworzenie wszystkich modeli przez 1 instancję egzekutora - ponad 3 godz. O ile spodziewaliśmy się, że dla 1 egzekutora przetworzenie wszystkich modeli będzie o wiele dłuższe niż dla większej ich liczby, to nie spodziewaliśmy się, że lepsze wyniki uzyskane zostaną dla 2 niż dla 4 egzekutorów. Dla 4 egzekutorów najdłużej przetwarzane są modele z warstwy demo_gold - w warstwach demo_bronze oraz demo_silver 4 instancje egzekutora dają bowiem najszybsze wyniki.
+
+b) Jak widać na wykresie, jest bardzo duża dysproporcja pomiędzy czasami przetwarzania poszczególnych modeli. Większość z nich jest bowiem przewarzana w kilka - kilkadziesiąt sekund - różnica pomiędzy liczbą wykorzystanych instancji egzekutora nie jest zatem w takich przypadkach bardzo widoczna. Inaczej sprawa ma się w przypadku większych modeli, jak np. demo_silver.daily_market. Na jego przykładzie świetnie widać, że zwiększenie liczby egzekutorów z 1 do 2 pomaga ograniczyć czas przetwarzania o ponad połowę. Choć zysk ze zwiększenia liczby egzekutorów z 2 do 4 dla tego przypadku jest relatywnie mniejszy od uzysku z 1 do 2, wciąż jest on istotny (znów prawie dwukrotny zysk na czasie). Dla tego dużego modelu skalowanie przebiega zatem zgodnie z oczekiwaniami.
+
+c) Mamy też jednak inne modele, jak np. demo_gold.dim_trade lub demo_silver.trades, gdzie uzysk ze zwiększenia liczby instancji egzekutorów z 1 do 2 jest potężny (ponad 4-krotny), a zwiększenie z 2 do 4 przynosi zysk, lecz nieznaczny. Istnieje również trzecia grupa modeli, dla których zwiększenie liczby egzekutorów z 1 do 2 przynosi istotną poprawę, lecz zwiększenie z 2 do 4 wręcz pogarsza (czasem nawet 3-4 krotnie) czas przetwarzania. Przykładami takich modeli są demo_gold.fact_trade oraz demo_silver.watches. Skalowanie w przypadku tych grup nie przebiega zatem zgodnie z początkową intuicją, co może wynikać z ograniczonych możliwości zrównoleglania operacji, których obsłużenie w przypadku niektórych modeli wprowadza wręcz niepotrzebny narzut.
+
+Podsumowując, ciężko jednoznacznie stwierdzić, co wpływa na to, czy skalowalność postępuje zgodnie z intuicją, czy też nie - prawdopodobnie jest to charakterystyka modelu. Niektóre modele skalują się podręcznikowo, jak np. demo_silver.daily_market, a niektóre przeczą pierwotnej intuicji, gdyż zwiększenie liczby egzekutorów wręcz wydłuża czas przetwarzania, jak w przypadku demo_gold.fact_trade. Bezpiecznym zdaje się zatem zalecenie użycia 2 egzekutorów. Gdybyśmy mieli do przetworzenia więcej takich modeli jak np. demo_silver.daily_market, warto byłoby rozważyć użycie większej liczby instancji egzekutorów.
+
+
+
+
