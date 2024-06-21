@@ -90,7 +90,40 @@ the running instance of your Vertex AI Workbench
 
 10. Add some 3 more [dbt tests](https://docs.getdbt.com/docs/build/tests) and explain what you are testing. ***Add new tests to your repository.***
 
-   ***Code and description of your tests***
+   Dodane przez nas 3 testy znajdują się [tutaj](https://github.com/JakubDziegielewski/tbd-tpc-di/tree/main/tests).
+
+   Pierwszy test jest testem typu unique - sprawdza, czy w tabeli `dim_broker` znajdują się duplikaty o takim samym `sk_broker_id`.
+
+   ```
+   select 
+    sk_broker_id, 
+    count(*) cnt
+   from {{ ref('dim_broker') }} 
+   group by sk_broker_id
+   having cnt > 1
+   ```
+
+   Drugi test jest testem typu not null - sprawdza, czy w tabeli `dim_broker` znajdują się rekordy o brakującej wartości identyfikatora `sk_broker_id`.
+
+   ```
+   select sk_broker_id
+   from {{ ref('dim_broker') }} 
+   where sk_broker_id is null
+   ```
+
+   Trzeci test jest testem typu relationship (foreign key) - sprawdza, czy w tabeli `dim_account` każde konto ma przyporządkowanego brokera z tabeli `dim_broker`.
+
+   ```
+   select accounts.sk_broker_id
+   from {{ ref('dim_account') }} AS accounts
+   left join {{ ref('dim_broker') }} AS brokers
+   on accounts.sk_broker_id = brokers.sk_broker_id
+   where accounts.sk_account_id is null
+   ```
+
+   Poniżej umieszczamy zrzut ekrany potwierdzający fakt, że wszystkie stworzone przez nas wyżej testy pomyślnie przechodzą.
+   
+   ![img.png](doc/figures/tests_pass.png)
 
 11. In main.tf update
    ```
