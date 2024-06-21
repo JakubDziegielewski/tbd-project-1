@@ -135,3 +135,5 @@ the running instance of your Vertex AI Workbench
 12. Redeploy infrastructure and check if the DAG finished with no errors:
 
 Did not work. Most likely due to the fact that our composer has been run on the europe-west1, but this had to be done in order for the infrastructure to run.
+
+   ![img.png](doc/figures/dag_fail.png)
