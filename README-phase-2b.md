@@ -83,5 +83,14 @@ in profiles.yml.
 | TOTAL                                       | 10801,89 | 3756,01  | 4364,14  |
 
 
+Poniższa tabela zawiera zagregowane dane o czasach wykonania dla każdej z warstw (w sekundach) w zależności od liczby egzekutorów.
+
+| model \ instances   | 1        | 2        | 4        |
+|---------------------|----------|----------|----------|
+| demo_bronze         | 1034,02  | 290,71   | 238,66   |
+| demo_silver         | 5348,33  | 1864,21  | 1791,55  |
+| demo_gold           | 4419,54  | 1601,09  | 2333,93  |
+| TOTAL               | 10801,89 | 3756,01  | 4364,14  |
+
 
    
