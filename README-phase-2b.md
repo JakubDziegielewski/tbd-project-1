@@ -85,7 +85,7 @@ in profiles.yml.
 
 Poniższa tabela zawiera zagregowane dane o czasach wykonania dla każdej z warstw (w sekundach) w zależności od liczby egzekutorów.
 
-| model \ instances   | 1        | 2        | 4        |
+| layer \ instances   | 1        | 2        | 4        |
 |---------------------|----------|----------|----------|
 | demo_bronze         | 1034,02  | 290,71   | 238,66   |
 | demo_silver         | 5348,33  | 1864,21  | 1791,55  |
